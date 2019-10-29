@@ -14,6 +14,7 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { PatrocinadoresModule} from "./patrocinadores/patrocinadores.module";
+import { LenguajeModule} from "./lenguaje/lenguaje.module";
 
 
 
@@ -40,7 +41,8 @@ import { PatrocinadoresModule} from "./patrocinadores/patrocinadores.module";
         NgxPaginationModule,
         NgxPermissionsModule.forRoot(),
         NgbModule,
-        PatrocinadoresModule
+        PatrocinadoresModule,
+        LenguajeModule
     ],
     bootstrap: [AppComponent],
     providers: [
