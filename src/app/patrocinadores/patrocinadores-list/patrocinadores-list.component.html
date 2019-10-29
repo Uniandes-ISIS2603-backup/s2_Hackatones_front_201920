@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="col-md-2">
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Nombre del Patrocinador</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let p of patrocinadores">
+            <td>{{p.name}}</td>
+  
+          </tr>
+        </tbody>
+      </table>
+    </div>
