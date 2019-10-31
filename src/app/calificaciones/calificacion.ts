@@ -1,4 +1,4 @@
-//import {Actual} from ".\actual" ;
+import {Hackaton} from "../hackatones/hackatones" ;
 export interface Calificacion {
   
   /**
@@ -19,5 +19,5 @@ export interface Calificacion {
   /**
       * La hackaton
       */
-  //actual: Actual;
+  hackaton: Hackaton;
 }

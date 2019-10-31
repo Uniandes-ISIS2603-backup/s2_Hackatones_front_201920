@@ -19,7 +19,7 @@ export class CalificacionesListComponent implements OnInit {
     this.getCalificaciones();
   }
   getCalificaciones(): void {
-        this.calificacionService.getCalificaciones.subscribe(calificaciones => this.calificaciones = calificaciones);
+        this.calificacionService.getCalificaciones().subscribe(calificaciones => this.calificaciones = calificaciones);
     }
   
   calificaciones: Calificacion[] ;

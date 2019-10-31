@@ -12,4 +12,4 @@ import { CalificacionesService } from './calificaciones.service';
   providers: [CalificacionesService]
 
 })
-export class PatrocinadoresModule { }
+export class CalificacionesModule { }

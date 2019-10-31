@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<div class="container-fluid">
+  <div class="col-md-2">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Hackaton</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let h of hackatones">
+                    <td>{{h.nombre}}</td>
+      </tbody>
+    </table>
+  </div>
+</div> 
