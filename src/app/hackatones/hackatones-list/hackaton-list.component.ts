@@ -19,7 +19,7 @@ export class HackatonesListComponent implements OnInit {
     this.getHackatones();
   }
   getHackatones(): void {
-        this.hackatonService.getHackatones.subscribe(hackatones => this.hackatones = hackatones);
+        this.hackatonService.getHackatones().subscribe(hackatones => this.hackatones = hackatones);
     }
   
   hackatones: Hackaton[] ;
