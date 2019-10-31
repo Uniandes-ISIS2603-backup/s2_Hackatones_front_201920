@@ -15,6 +15,9 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { PatrocinadoresModule} from "./patrocinadores/patrocinadores.module";
 import { LenguajeModule} from "./lenguaje/lenguaje.module";
+import { UsuarioModule} from "./usuario/usuario.module";
+import { ParticipanteModule} from "./participante/participante.module";
+
 
 
 
@@ -42,7 +45,9 @@ import { LenguajeModule} from "./lenguaje/lenguaje.module";
         NgxPermissionsModule.forRoot(),
         NgbModule,
         PatrocinadoresModule,
-        LenguajeModule
+        LenguajeModule,
+        UsuarioModule,
+        ParticipanteModule
     ],
     bootstrap: [AppComponent],
     providers: [

@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Usuario } from './usuario';
+import { Participante } from './participante';
 import { Observable } from 'rxjs';
 
 const API_URL = '';
-const lenguajes = '';
+const participantes = '';
 
 @Injectable()
-export class UsuarioService {
+export class ParticipanteService {
 
   /**
     * Constructor of the service
@@ -15,7 +15,7 @@ export class UsuarioService {
     */
     constructor(private http: HttpClient) { }    
   
-    getLenguaje() : Observable<Usuario[]> {
-        return this.http.get<Usuario[]>(API_URL + lenguajes);
+    getParticipante() : Observable<Participante[]> {
+        return this.http.get<Participante[]>(API_URL + participantes);
     }
 }

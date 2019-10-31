@@ -7,8 +7,8 @@ import { UsuarioService } from './usuario.service';
   imports: [
     CommonModule
   ],
-  declarations: [LenguajeListComponent],
-  exports: [LenguajeListComponent],
+  declarations: [UsuarioListComponent],
+  exports: [UsuarioListComponent],
   providers: [UsuarioService]
 })
 export class UsuarioModule { }
