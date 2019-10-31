@@ -1,5 +1,5 @@
 import {Hackaton} from "../hackatones/hackatones" ;
-export interface Calificacion {
+export class Calificacion {
   
   /**
       * El id de la calificacion

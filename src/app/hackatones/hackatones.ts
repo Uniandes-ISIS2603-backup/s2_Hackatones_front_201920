@@ -1,5 +1,5 @@
 //import {Actual} from ".\actual" ;
-export interface Hackaton {
+export class Hackaton {
   
     id:number;
     
