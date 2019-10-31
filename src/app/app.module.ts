@@ -8,17 +8,17 @@ import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
 import {NgxPermissionsModule} from 'ngx-permissions';
-import { ModalDialogModule } from 'ngx-modal-dialog';
+import {ModalDialogModule } from 'ngx-modal-dialog';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
-import { PatrocinadoresModule} from "./patrocinadores/patrocinadores.module";
-import { LenguajeModule} from "./lenguaje/lenguaje.module";
-import { UsuarioModule} from "./usuario/usuario.module";
-import { ParticipanteModule} from "./participante/participante.module";
-
-
+import {PatrocinadoresModule} from "./patrocinadores/patrocinadores.module";
+import {LenguajeModule} from "./lenguaje/lenguaje.module";
+import {UsuarioModule} from "./usuario/usuario.module";
+import {ParticipanteModule} from "./participante/participante.module";
+import {HackatonesModule} from "./hackatones/hackatones.module";
+import {CalificacionesModule} from "./calificaciones/calificacion.module";
 
 
 
@@ -47,7 +47,9 @@ import { ParticipanteModule} from "./participante/participante.module";
         PatrocinadoresModule,
         LenguajeModule,
         UsuarioModule,
-        ParticipanteModule
+        ParticipanteModule,
+        HackatonesModule,
+        CalificacionesModule
     ],
     bootstrap: [AppComponent],
     providers: [
