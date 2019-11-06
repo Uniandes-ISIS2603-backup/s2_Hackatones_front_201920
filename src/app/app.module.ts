@@ -52,6 +52,7 @@ import {CalificacionesModule} from "./calificaciones/calificacion.module";
         CalificacionesModule
     ],
     bootstrap: [AppComponent],
+    exports:[ProximaCreateComponent],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,
