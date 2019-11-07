@@ -4,8 +4,7 @@ import { PatrocinadoresService } from '../patrocinadores.service';
 
 @Component({
   selector: 'app-patrocinadores-list',
-  templateUrl: './patrocinadores-list.component.html',
-  styleUrls: ['./patrocinadores-list.component.css']
+  templateUrl: './patrocinadores-list.component.html']
 })
 export class PatrocinadoresListComponent implements OnInit {
 
