@@ -20,6 +20,6 @@ import { TecnologiaListComponent } from './tecnologia-list/tecnologia-list.compo
         NgxPermissionsModule
     ],
     declarations: [
-        TecnologiaListComponent, 
+        TecnologiaListComponent 
     ]
 })

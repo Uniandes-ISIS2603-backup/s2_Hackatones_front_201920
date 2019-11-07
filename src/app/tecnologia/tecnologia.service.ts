@@ -47,7 +47,7 @@ export class TecnologiaService {
      * @returns La tecnologia actualizada
      */
     updateTecnologia(tecnologia): Observable<TecnologiaDetail> {
-        return this.http.put<TecnologiaDetail>(API_URL + tecnologias)
+        return this.http.put<TecnologiaDetail>(API_URL + tecnologias);
     }
 
     /**
@@ -56,6 +56,6 @@ export class TecnologiaService {
      * @returns True si la tecnologia, False si no fue eliminada
      */
     deleteTecnologia(tecnologiaId): Observable<TecnologiaDetail> {
-        return this.http.delete<TecnologiaDetail>(API_URL + tecnologias + '/' + )
+        return this.http.delete<TecnologiaDetail>(API_URL + tecnologias + '/' +tecnologiaId);
     }
 }
