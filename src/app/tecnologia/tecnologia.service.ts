@@ -6,11 +6,11 @@ import {Tecnologia} from './tecnologia';
 import {TecnologiaDetail} from './tecnologia-detail';
 
 import {environment} from '../../environments/environment';
-import { Participante } from '../participante/participante';
+import { Usuario } from '../usuario/usuario';
 const API_URL = environment.apiURL;
 const tecnologias = '/tecnologia';
 
-@Injectable
+@Injectable()
 export class TecnologiaService {
 
     /**
@@ -46,9 +46,10 @@ export class TecnologiaService {
      * @param tecnologia La tecnologia actualizada
      * @returns La tecnologia actualizada
      */
-    updateTecnologia(tecnologia): Observable<TecnologiaDetail> {
-        return this.http.put<TecnologiaDetail>(API_URL + tecnologias);
+    updateTecnologia(tecnologia: Tecnologia): Observable<TecnologiaDetail> {
+        return this.http.put<TecnologiaDetail>(API_URL + tecnologias+ '/' + tecnologia.id, tecnologia);
     }
+
 
     /**
      * Borra una tecnologia

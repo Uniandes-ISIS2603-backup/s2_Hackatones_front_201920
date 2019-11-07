@@ -60,33 +60,6 @@ export class TecnologiaDetailComponent implements OnInit, OnDestroy {
     }
 
     /**
-     * Borra la tecnologia de la hackaton
-     */
-    deleteTecnologias(): void {
-        this.modalDialogService.openDialogService.openDialog(this.viewRef, {
-            title: 'Delete Tecnologia',
-            childComponent: SimpleModalComponent,
-            data: {text: '¿Esta seguro de borrar esta tecnologia?'},
-            actionButtons: [
-                {
-                    text: 'Yes',
-                    buttonClass: 'btn btn-danger',
-                    onAction: () => {
-                        this.tecnologiaService.deleteTecnologia(this.tecnologia_id).subscribe(tecnologia => {
-                            this.toastrService.success("La tecnologia ", "Tecnologia borrada");
-                            this.router.navigate(['tecnologias/list']);
-                        }, err => {
-                            this.toastrService.error(err, "Error");
-                        });
-                        return true;
-                    }
-                },
-                {text: 'No', onAction: () => true}
-            ]
-        });
-    }
-
-    /**
      * Inicializa el componente
      */
     ngOnInit() {

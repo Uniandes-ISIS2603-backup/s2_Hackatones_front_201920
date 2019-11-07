@@ -8,11 +8,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxPermissionsModule} from 'ngx-permissions';
 
 import {HackatonListComponent} from './hackaton-list/hackaton-list.component';
-import {HackatonCalificacionComponent} from './hackaton-calificacions/hackaton-calificacion.component';
+import {HackatonCalificacionComponent} from './hackaton-calificacion/hackaton-calificacion.component';
 import {HackatonCreateComponent} from './hackaton-create/hackaton-create.component';
 import {HackatonDetailComponent} from './hackaton-detail/hackaton-detail.component';
 import {HackatonAddCalificacionComponent} from './hackaton-add-calificacion/hackaton-add-calificacion.component';
-import {HackatonEditComponent} from './hackaton-edit/hackaton-edit.component';
 
 import {HackatonService} from './hackaton.service';
 
@@ -28,9 +27,8 @@ import {HackatonService} from './hackaton.service';
         NgxPermissionsModule
     ],
     declarations: [
-        HackatonListComponent, HackatonDetailComponent, HackatonCalificacionComponent, HackatonCreateComponent, HackatonAddCalificacionComponent, HackatonEditComponent
-    ],
+        HackatonListComponent, HackatonDetailComponent, HackatonCalificacionComponent, HackatonCreateComponent, HackatonAddCalificacionComponent    ],
     providers: [HackatonService],
-    exports: [HackatonListComponent, HackatonEditComponent]
+    exports: [HackatonListComponent]
 })
 export class HackatonModule {}

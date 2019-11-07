@@ -114,7 +114,7 @@ export class HackatonDetailComponent implements OnInit, OnDestroy {
      */
     updateCalificacions(): void {
         this.getHackatonDetail();
-        this.calificacionListComponent.updateCalificacions(this.hackatonDetail.calificacions);
+        this.calificacionListComponent.updateCalificaciones(this.hackatonDetail.calificaciones);
         this.calificacionListComponent.isCollapsed = false;
         this.calificacionAddComponent.isCollapsed = true;
     }

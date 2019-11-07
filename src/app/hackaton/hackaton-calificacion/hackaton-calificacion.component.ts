@@ -5,7 +5,7 @@ import { Calificacion } from '../calificacion';
     selector: 'app-hackaton-calificacion',
     templateUrl: './hackaton-calificacion.component.html',
 })
-export class HackatonReviewComponent implements OnInit {
+export class HackatonCalificacionComponent implements OnInit {
     @Input() hackatonCalificaciones : Calificacion [];
     
     public isCollapsed = false;
@@ -13,7 +13,7 @@ export class HackatonReviewComponent implements OnInit {
     /**
      * The function called when a Calificacion is posted to update the Calificaciones
      */
-    updateReviews(calificaciones:Calificacion[]): void {
+    updateCalificaciones(calificaciones:Calificacion[]): void {
         this.hackatonCalificaciones = calificaciones;
     }
     
