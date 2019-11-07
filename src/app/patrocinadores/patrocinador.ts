@@ -1,4 +1,4 @@
-export interface Patrocinador {
+export class Patrocinador {
     /**
       * El id del patrocinador
       */

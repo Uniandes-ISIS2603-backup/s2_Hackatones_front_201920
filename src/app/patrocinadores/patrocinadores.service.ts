@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Patrocinador } from './patrocinador';
 import { Observable } from 'rxjs';
+import { PatrocinadorDetail } from './patrocinador-detail';
 
 const API_URL = "../../assets/";
 const patrocinadores = 'patrocinadores.json';
@@ -19,4 +20,7 @@ export class PatrocinadoresService {
         return this.http.get<Patrocinador[]>(API_URL + patrocinadores);
     }
 
+    getPatrocinadorDetail(patrocinadorId): Observable<PatrocinadorDetail> {
+        return this.http.get<PatrocinadorDetail>(API_URL + "patrocinador-" + patrocinadorId+".json");
+    }
 }
