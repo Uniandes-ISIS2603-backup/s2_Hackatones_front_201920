@@ -28,7 +28,7 @@ export class LugarCreateComponent implements OnInit {
   createLugar(newLugar: Lugar) {
     // Process checkout data here
     console.warn("Your order has been submitted", newLugar);
-
+    this.showSuccess();
     this.lugarService.createLugar(newLugar).subscribe(lugar => {
       this.lugares.push(lugar);
     });
