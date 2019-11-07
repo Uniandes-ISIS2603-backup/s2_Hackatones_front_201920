@@ -1,0 +1,50 @@
+<form [formGroup]="lugarForm" (ngSubmit)="createLugar(lugarForm.value)">
+	<div class="form-group mx-sm-3 mb-2">
+		<label for="nombre">
+      Nombre del lugar
+    </label>
+		<input novalidate
+    id="nombre"
+    class="form-control"
+      formControlName="nombre"
+      placeholder="Por favor, ingrese el nombre del lugar">
+
+		<div class="alert alert-danger alert-dismissible fade show"
+			*ngIf="lugarForm.get('nombre').hasError('required') && lugarForm.get('nombre').touched">
+			Ingrese un nombre valido
+		</div>
+	</div>
+
+  	<div class="form-group mx-sm-3 mb-2">
+		<label for="ciudad">
+      Ciudad
+    </label>
+		<input novalidate
+    id="ciudad"
+    class="form-control"
+      formControlName="ciudad"
+      placeholder="Por favor, ingrese la ciudad de la hackaton">
+
+		<div class="alert alert-danger alert-dismissible fade show"
+			*ngIf="lugarForm.get('ciudad').hasError('required') && lugarForm.get('ciudad').touched">
+			Ingrese una ciudad valida
+		</div>
+	</div>
+
+  	<div class="form-group mx-sm-3 mb-2">
+		<label for="direccion">
+      Direccion
+    </label>
+		<input novalidate
+    id="direccion"
+    class="form-control"
+      formControlName="direccion"
+      placeholder="Por favor, ingrese la direccion de la hackaton">
+
+		<div class="alert alert-danger alert-dismissible fade show"
+			*ngIf="lugarForm.get('direccion').hasError('required') && lugarForm.get('direccion').touched">
+			Ingrese una dirección valida
+		</div>
+	</div>
+	<button class="button mx-sm-3 mb-2" type="submit" [disabled]="lugarForm.invalid">Crear</button>
+</form>

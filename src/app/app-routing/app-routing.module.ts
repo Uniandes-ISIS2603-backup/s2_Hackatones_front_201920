@@ -8,6 +8,8 @@ import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component
 import { PatrocinadorDetailComponent } from '../patrocinadores/patrocinador-detail/patrocinador-detail.component';
 import { PatrocinadoresListComponent } from '../patrocinadores/patrocinadores-list/patrocinadores-list.component';
 
+import { LugarDetailComponent } from "../lugar/lugar-detail/lugar-detail.component";
+import { LugarListComponent } from "../lugar/lugar-list/lugar-list.component";
 const routes: Routes = [
 
      {
@@ -54,6 +56,20 @@ const routes: Routes = [
           component: PatrocinadorDetailComponent,
           outlet: 'detail'
         }
+        ]
+      },
+      {
+        path: "lugares",
+        children: [
+          {
+            path: "list",
+            component: LugarListComponent
+          },
+          {
+            path: ":id",
+            component: LugarDetailComponent,
+            outlet: "detail"
+          }
         ]
       }
 ];

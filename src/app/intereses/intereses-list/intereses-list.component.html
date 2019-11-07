@@ -5,14 +5,14 @@
                 <tr>
                     <th>Id</th> 
                     <th>Nombre interes</th> 
-                    <th>Descripcion</th>  
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor = "let e of intereses">
-                    <td>{{e.id}}</td>
-                    <td>{{e.nombre}}</td>
-                    <td>{{e.descripcion}}</td>
+                  <td>{{e.id}}</td>
+                   <td style="cursor: pointer;">
+						<a class="figure-caption" [routerLink] ="['/intereses', { outlets: { 'detail': [e.id] } }]" >{{e.nombre}}</a>
+					</td>
                 </tr>
             </tbody>
         </table>

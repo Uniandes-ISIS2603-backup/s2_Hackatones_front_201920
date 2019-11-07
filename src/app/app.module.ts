@@ -19,6 +19,8 @@ import {UsuarioModule} from "./usuario/usuario.module";
 import {ParticipanteModule} from "./participante/participante.module";
 import {HackatonesModule} from "./hackatones/hackatones.module";
 import {CalificacionesModule} from "./calificaciones/calificacion.module";
+import { LugarModule } from './lugar/lugar.module';
+
 
 
 
@@ -35,6 +37,7 @@ import {CalificacionesModule} from "./calificaciones/calificacion.module";
         BrowserAnimationsModule,
         ModalDialogModule.forRoot(),
         AuthModule,
+        LugarModule,
         FormsModule,
         ToastrModule.forRoot({
             timeOut: 10000,

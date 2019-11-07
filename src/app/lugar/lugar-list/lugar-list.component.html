@@ -12,7 +12,9 @@
             <tbody>
                 <tr *ngFor = "let e of lugares">
                     <td>{{e.id}}</td>
-                    <td>{{e.nombre}}</td>
+                     <td style="cursor: pointer;">
+						          <a class="figure-caption" [routerLink] ="['/lugares', { outlets: { 'detail': [e.id] } }]" >{{e.nombre}}</a>
+					           </td>
                     <td>{{e.ciudad}}</td>
                     <td>{{e.direccion}}</td>
                 </tr>

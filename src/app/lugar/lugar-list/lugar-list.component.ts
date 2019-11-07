@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from '@angular/router';
 import { Lugar } from "../lugar";
 import { LugarService } from "../lugar.service";
 
@@ -6,15 +7,15 @@ import { LugarService } from "../lugar.service";
  * The component for the list of editorials in the BookStore
  */
 @Component({
-  selector: "app-lugares-list",
+  selector: "lugares-list",
   templateUrl: "./lugar-list.component.html"
 })
-export class LugaresListComponent implements OnInit {
+export class LugarListComponent implements OnInit {
   /**
    * Constructor for the component
    * @param editorialService The author's services provider
    */
-  constructor(private lugaresService: LugarService) {}
+  constructor(private lugaresService: LugarService, private router :Router) {}
 
   /**
    * The list of editorials which belong to the BookStore
