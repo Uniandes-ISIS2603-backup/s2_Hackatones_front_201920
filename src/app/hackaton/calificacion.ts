@@ -1,4 +1,4 @@
-import {Hackaton} from "../hackatones/hackatones" ;
+import {Hackaton} from './hackaton';
 export class Calificacion {
   
   /**

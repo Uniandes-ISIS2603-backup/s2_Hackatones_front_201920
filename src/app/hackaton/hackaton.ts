@@ -1,4 +1,4 @@
-//import {Actual} from ".\actual" ;
+
 export class Hackaton {
   
     id:number;
