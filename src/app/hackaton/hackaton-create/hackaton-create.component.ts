@@ -48,8 +48,7 @@ export class HackatonCreateComponent implements OnInit {
     * Creates a new hackaton
     */
     createHackaton(): Hackaton {
-        let dateB: Date = new Date(this.hackaton.publishingdate.year, this.hackaton.publishingdate.month - 1, this.hackaton.publishingdate.day);
-        this.hackaton.publishingdate = this.dp.transform(dateB, 'yyyy-MM-dd');
+       
         this.hackatonService.createHackaton(this.hackaton)
             .subscribe(hackaton => {
                 this.hackaton.id = hackaton.id;

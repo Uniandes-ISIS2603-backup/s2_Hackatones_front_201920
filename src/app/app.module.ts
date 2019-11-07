@@ -16,9 +16,6 @@ import {AuthModule} from './auth/auth.module';
 import {PatrocinadoresModule} from "./patrocinadores/patrocinadores.module";
 import {LenguajeModule} from "./lenguaje/lenguaje.module";
 import {UsuarioModule} from "./usuario/usuario.module";
-import {ParticipanteModule} from "./participante/participante.module";
-import {HackatonesModule} from "./hackatones/hackatones.module";
-import {CalificacionesModule} from "./calificaciones/calificacion.module";
 import { LugarModule } from './lugar/lugar.module';
 
 
@@ -49,13 +46,9 @@ import { LugarModule } from './lugar/lugar.module';
         NgbModule,
         PatrocinadoresModule,
         LenguajeModule,
-        UsuarioModule,
-        ParticipanteModule,
-        HackatonesModule,
-        CalificacionesModule
+        UsuarioModule
     ],
     bootstrap: [AppComponent],
-    exports:[ProximaCreateComponent],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,
