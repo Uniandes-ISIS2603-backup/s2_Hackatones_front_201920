@@ -23,3 +23,4 @@ import { TecnologiaListComponent } from './tecnologia-list/tecnologia-list.compo
         TecnologiaListComponent 
     ]
 })
+export class TecnologiaModule { }
