@@ -71,7 +71,7 @@ const routes: Routes = [
             outlet: "detail"
           }
         ]
-      }
+    }
 ];
 
 @NgModule({
