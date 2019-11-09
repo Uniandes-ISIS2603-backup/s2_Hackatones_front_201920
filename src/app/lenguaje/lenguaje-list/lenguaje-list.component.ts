@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Lenguaje} from '../lenguaje';
+import { Router } from '@angular/router';
+import { LenguajeService } from '../lenguaje.service';
+
+
 
 @Component({
   selector: 'app-lenguaje-list',
@@ -7,12 +11,31 @@ import { Lenguaje} from '../lenguaje';
   styleUrls: ['./lenguaje-list.component.css']
 })
 export class LenguajeListComponent implements OnInit {
-  /**
-     * The list of lenguajes which belong to the BookStore
- */ lenguajes: Lenguaje[]= [{id: 1, name:"Python"}, {id: 2,name:"Java"}];
-  constructor() { }
+/**
+   * Constructor for the component
+   * @param lenguajeService The author's services provider
+   */
+  constructor(private lenguajeService: LenguajeService, private router: Router) { }
 
+  /**
+   * The list of editorials which belong to the BookStore
+   */
+  lenguajes: Lenguaje[];
+
+  /**
+   * Asks the service to update the list of editorials
+   */
+  getLenguajes(): void {
+    this.lenguajeService.getLenguaje().subscribe(editorials => this.lenguajes = editorials);
+  }
+
+  
+  /**
+   * This will initialize the component by retrieving the list of editorials from the service
+   * This method will be called when the component is created
+   */
   ngOnInit() {
+    this.getLenguajes();
   }
 
 }

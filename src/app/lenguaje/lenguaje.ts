@@ -1,4 +1,4 @@
-export interface Lenguaje 
+export class Lenguaje 
 {
   /**
     * The lenguaje's id

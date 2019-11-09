@@ -1,0 +1,27 @@
+<form [formGroup]="lenguajeForm" (ngSubmit)="createLenguaje(lenguajeForm.value)">
+
+   <div class="form-group mx-sm-3 mb-2">
+    <label for="name">
+      Name
+    </label>
+    <input novalidate
+      id="name"
+      class="form-control"
+      formControlName="name"
+      placeholder="Your Lenguaje Name">
+   </div>
+
+   <div class="form-group  mx-sm-3 mb-2">
+    <label for="address">
+      ID
+    </label>
+   <input id="id" type="text"
+     class="form-control"
+     formControlName="id"
+     placeholder="Your lenguaje id">
+  </div>
+
+  <button class="button mx-sm-3 mb-2" type="submit"   
+          [disabled]="lenguajeForm.invalid">Create</button>
+
+</form>

@@ -1,16 +1,18 @@
 <div class="container-fluid">
-    <div class="col-md-2">
-      <table class="table table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th>Lenguaje Name</th>
-          </tr>
-        </thead>
-        <tbody>
-                  <tr *ngFor = "let e of lenguajes">
-                      <td>{{e.name}}</td>
-                    
-                  </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="col-md-2">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Lenguaje Name</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr *ngFor = "let e of lenguajes">
+                    <td style="cursor: pointer;">
+						<a class="figure-caption" [routerLink] ="['/lenguajes', { outlets: { 'detail': [e.id] } }]" >{{e.name}}</a>
+					</td>
+                  
+                </tr>
+      </tbody>
+    </table>
+  </div>

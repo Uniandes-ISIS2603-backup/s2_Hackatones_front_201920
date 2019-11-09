@@ -8,6 +8,9 @@ import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component
 import { PatrocinadorDetailComponent } from '../patrocinadores/patrocinador-detail/patrocinador-detail.component';
 import { PatrocinadoresListComponent } from '../patrocinadores/patrocinadores-list/patrocinadores-list.component';
 
+import { LenguajeDetailComponent } from '../lenguaje/lenguaje-detail/lenguaje-detail.component';
+import { LenguajeListComponent } from '../lenguaje/lenguaje-list/lenguaje-list.component';
+
 import { LugarDetailComponent } from "../lugar/lugar-detail/lugar-detail.component";
 import { LugarListComponent } from "../lugar/lugar-list/lugar-list.component";
 
@@ -28,6 +31,19 @@ const routes: Routes = [
             }
            ]
         },
+    {
+            path: 'lenguajes',
+            children: [{
+              path: 'list',
+              component: LenguajeListComponent
+            },
+            {
+              path: ':id',
+              component: LenguajeDetailComponent,
+              outlet: 'detail'
+            }
+            ]
+          },
     {
         path: 'patrocinadores',
             children: 
