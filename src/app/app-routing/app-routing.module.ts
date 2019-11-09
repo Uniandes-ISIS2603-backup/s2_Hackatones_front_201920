@@ -10,8 +10,39 @@ import { PatrocinadoresListComponent } from '../patrocinadores/patrocinadores-li
 
 import { LugarDetailComponent } from "../lugar/lugar-detail/lugar-detail.component";
 import { LugarListComponent } from "../lugar/lugar-list/lugar-list.component";
-const routes: Routes = [
 
+
+const routes: Routes = [
+    {
+        path: "lugares",
+        children: 
+           [
+            {
+             path: "list",
+             component: LugarListComponent
+            },
+            {
+             path: ":id",
+            component: LugarDetailComponent,
+            outlet: "detail"
+            }
+           ]
+        },
+    {
+        path: 'patrocinadores',
+            children: 
+            [
+                {
+                path: 'list',
+                component: PatrocinadoresListComponent
+               },
+               {
+               path: ':id',
+                component: PatrocinadorDetailComponent,
+                outlet: 'detail'
+               }
+           ]
+       },
      {
         path: 'auth',
         children: [
@@ -34,6 +65,14 @@ const routes: Routes = [
                         only: ['GUEST']
                     }
                 }
+            },
+            {
+                path: 'home',
+                component: AuthLoginComponent
+            },
+            {
+                path: '**',
+                redirectTo: 'home',
             }
         ]
     },
@@ -44,35 +83,10 @@ const routes: Routes = [
     {
         path: '**',
         redirectTo: 'home',
-    },
-    {
-        path: 'patrocinadores',
-        children: [{
-          path: 'list',
-          component: PatrocinadoresListComponent
-        },
-        {
-          path: ':id',
-          component: PatrocinadorDetailComponent,
-          outlet: 'detail'
-        }
-        ]
-      },
-      {
-        path: "lugares",
-        children: [
-          {
-            path: "list",
-            component: LugarListComponent
-          },
-          {
-            path: ":id",
-            component: LugarDetailComponent,
-            outlet: "detail"
-          }
-        ]
     }
 ];
+
+
 
 @NgModule({
     imports: [
@@ -85,3 +99,4 @@ const routes: Routes = [
 export class AppRoutingModule {
 
 }
+     
