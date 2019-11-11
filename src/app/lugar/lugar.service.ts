@@ -38,13 +38,13 @@ export class LugarService {
 
   /** PUT: actualiza el lugar en el servidor */
   updateLugar(lugar: Lugar): Observable<LugarDetail> {
-    return this.http.put<LugarDetail>(API_URL + lugares + '/' + lugar.id, lugar);
+    return this.http.put<LugarDetail>(API_URL + lugares + '/' + lugar.identificador, lugar);
   }
 
-  getLugaresDetail(nombreLugar : String): Observable<LugarDetail> 
+  getLugaresDetail(idLugar : number): Observable<LugarDetail> 
     {
-      console.log("llegas?")
-        return this.http.get<LugarDetail>(API_URL + lugares + '/' + nombreLugar);
+      console.log("llega");
+        return this.http.get<LugarDetail>(API_URL+lugares+'/'+idLugar);
     }
 
 }
