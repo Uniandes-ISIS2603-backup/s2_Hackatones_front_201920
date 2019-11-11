@@ -4,7 +4,7 @@
         <div class="divider"></div>
         <div class="divider"></div>
     </div>  
-    <div class="col">
+    <div class="col-10">
         <div class="divider"></div>
         <div class="divider"></div>
         <div class="divider"></div>
@@ -23,7 +23,7 @@
         <a [routerLink]="['/lugares/delete']" id = "but3" class="button fancy-button"><i class="material-icons">Eliminar un lugar</i></a>
         <div class="divider"></div>
         <div class="divider"></div>
-      </div>
+    </div>
         <div class="col">
             <div class="divider"></div>
             <div class="divider"></div>
@@ -35,8 +35,8 @@
                 <td style="cursor: pointer;">
                     <a class="figure-caption" [routerLink] ="['/lugares', { outlets: { 'detail': [e.identificador] } }]" >{{e.nombre}}</a>
                 </td>
+              </div>
            </div>
-         </div>
-      </tr>
-  </div>
-</div>
+          </tr>
+      </div>
+    </div>
