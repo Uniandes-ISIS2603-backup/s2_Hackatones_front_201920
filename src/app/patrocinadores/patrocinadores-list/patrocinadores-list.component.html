@@ -1,17 +1,18 @@
 <div class="container-fluid">
-    <div class="col-md-2">
-      <table class="table table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th>Nombre del Patrocinador</th>
-            
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor = "let p of patrocinadores">
-            <td>{{p.name}}</td>
-  
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="col-md-2">
+    <table class="table table-striped table-dark">
+      <thead class="thead-light">
+        <tr>
+          <th>Patrocinador Name</th>
+        </tr>
+      </thead>
+      <tbody>
+                <tr *ngFor = "let e of patrocinadores">
+                    <td style="cursor: pointer;">
+						<a class="figure-caption" [routerLink] ="['/patrocinadores', { outlets: { 'detail': [e.id] } }]" >{{e.name}}</a>
+					</td>
+                  
+                </tr>
+      </tbody>
+    </table>
+  </div>
