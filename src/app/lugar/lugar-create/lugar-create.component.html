@@ -5,42 +5,34 @@
         <h2 class="text-center"><font color="white">Crear un lugar</font></h2>
         <br>
         <form name="lugar" (ngSubmit)="f.form.valid && createLugar()" #f="ngForm" novalidate>
-                <div class="form-group">
-                        <label for="id"><b><font color="white">ID para el lugar</font></b></label>
-                        <input type="number" name="id" class="form-control" id="id" [(ngModel)]="lugar.id"
-                            #id="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lugarId.invalid }" required>
-                        <div class="invalid-feedback">
-                            <div>Hace falta el campo del id</div>
-                        </div>
-                    </div>
             <div class="form-group">
-                <label for="lugarCiudad"><b><font color="white">Ciudad</font></b></label>
-                <input type="text" name="lugarCiudad" class="form-control" id="lugarCiudad" [(ngModel)]="lugar.ciudad"
-                    #lugarCiudad="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lugarCiudad.invalid }" required>
+                <label for="ciudad"><b><font color="white">Ciudad</font></b></label>
+                <input type="text" name="ciudad" class="form-control" id="ciudad" [(ngModel)]="lugar.ciudad"
+                    #ciudad="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ciudad.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Hace falta el campo de la ciudad</div>
                 </div>
             </div>
             <div class="form-group">
-                    <label for="lugarDireccion"><b><font color="white">Direccion</font></b></label>
-                    <input type="text" name="lugarDireccion" class="form-control" id="lugarDireccion" [(ngModel)]="lugar.direccion"
-                        #lugarDireccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lugarDireccion.invalid }" required>
+                    <label for="direccion"><b><font color="white">Direccion</font></b></label>
+                    <input type="text" name="direccion" class="form-control" id="direccion" [(ngModel)]="lugar.direccion"
+                        #direccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && direccion.invalid }" required>
                     <div class="invalid-feedback">
                         <div>Hace falta el campo de la direccion</div>
                     </div>
                 </div>
                 <div class="form-group">
-                        <label for="lugarImagen"><b><font color="white">Imagen</font></b></label>
-                        <input type="text" name="lugarImagen" class="form-control" id="lugarImagen" [(ngModel)]="lugar.imagen"
-                            #lugarImagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lugarImagen.invalid }" required>
+                        <label for="imagen"><b><font color="white">Imagen</font></b></label>
+                        <input type="text" name="imagen" class="form-control" id="imagen" [(ngModel)]="lugar.imagen"
+                            #imagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && imagen.invalid }" required>
                         <div class="invalid-feedback">
                             <div>Hace falta el campo de la imagen</div>
                         </div>
                     </div>
                     <div class="form-group">
-                            <label for="lugarNombre"><b><font color="white">Nombre</font></b></label>
-                            <input type="text" name="lugarNombre" class="form-control" id="lugarNombre" [(ngModel)]="lugar.nombre"
-                                #lugarImagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lugarNombre.invalid }" required>
+                            <label for="nombre"><b><font color="white">Nombre</font></b></label>
+                            <input type="text" name="nombre" class="form-control" id="nombre" [(ngModel)]="lugar.nombre"
+                                #nombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nombre.invalid }" required>
                             <div class="invalid-feedback">
                                 <div>Hace falta el campo del nombre</div>
                             </div>
@@ -48,9 +40,8 @@
             <div class="row form-inline justify-content-center align-self-center">
                 <button type="submit" class="btn btn-primary">Create</button>
                 <div class="divider"></div>
-                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+                <button type="button" [routerLink]="['/home']"  class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
             </div>
         </form>
     </div>
-    <div class="col-3"></div>
 </div>

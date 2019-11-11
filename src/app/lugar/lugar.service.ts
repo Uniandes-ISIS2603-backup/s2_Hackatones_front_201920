@@ -43,7 +43,6 @@ export class LugarService {
 
   getLugaresDetail(idLugar : number): Observable<LugarDetail> 
     {
-      console.log("llega");
         return this.http.get<LugarDetail>(API_URL+lugares+'/'+idLugar);
     }
 

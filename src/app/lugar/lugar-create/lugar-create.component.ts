@@ -28,7 +28,7 @@ export class LugarCreateComponent implements OnInit {
 
     lugarForm: FormGroup;
 
-    lugares : Lugar[];
+    lugares : Lugar[] = new Array();
 
     /**
     * The output which tells the parent component
@@ -46,7 +46,7 @@ export class LugarCreateComponent implements OnInit {
     * Creates an author
     */
     createLugar(): Lugar {
-        console.log(this.lugar.identificador);
+        this.lugar.identificador = 88;
         this.lugarService.createLugar(this.lugar).subscribe(lugar => {
             this.lugares.push(lugar);
           });
