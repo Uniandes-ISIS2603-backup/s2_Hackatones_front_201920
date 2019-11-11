@@ -28,8 +28,7 @@ export class LugarService {
  
   /** POST: añade un nuevo lugar al servidor */
   createLugar(lugar: Lugar): Observable<Lugar> {
-    console.log("kha");
-    return this.http.post<Lugar>(API_URL + lugares, lugar, this.httpOptions).pipe(tap((lugar: Lugar) => console.log(`added lugar w/ ${lugar.nombre} id=${lugar.id}`)));
+    return this.http.post<Lugar>(API_URL + lugares, lugar);
   }
 
   /** DELETE: elimina un lugar del servidor */
@@ -42,8 +41,10 @@ export class LugarService {
     return this.http.put<LugarDetail>(API_URL + lugares + '/' + lugar.id, lugar);
   }
 
-  getLugaresDetail(lugarId): Observable<LugarDetail> {
-        return this.http.get<LugarDetail>(API_URL + lugares + '/' + lugarId);
+  getLugaresDetail(nombreLugar : String): Observable<LugarDetail> 
+    {
+      console.log("llegas?")
+        return this.http.get<LugarDetail>(API_URL + lugares + '/' + nombreLugar);
     }
 
 }

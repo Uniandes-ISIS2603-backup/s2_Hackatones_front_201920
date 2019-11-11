@@ -8,7 +8,8 @@ import { LugarService } from "../lugar.service";
  */
 @Component({
   selector: "lugares-list",
-  templateUrl: "./lugar-list.component.html"
+  templateUrl: "./lugar-list.component.html",
+  styleUrls: ['./lugar-list.component.css'],
 })
 export class LugarListComponent implements OnInit {
   /**
