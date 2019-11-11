@@ -1,27 +1,42 @@
 <div class="container-fluid">
-    <div class="col-md-2">
-        <table class="table table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Id</th> 
-                    <th>Nombre</th> 
-                    <th>Ciudad</th>  
-                     <th>Direccion</th>  
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor = "let e of lugares">
-                    <td>{{e.id}}</td>
-                     <td style="cursor: pointer;">
-						          <a class="figure-caption" [routerLink] ="['/lugares', { outlets: { 'detail': [e.id] } }]" >{{e.nombre}}</a>
-					           </td>
-                    <td>{{e.ciudad}}</td>
-                    <td>{{e.direccion}}</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="col">
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <div class="divider"></div>
+    </div>  
+    <div class="col">
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <a [routerLink]="['/lugares/add']" id = "but1" class="button fancy-button"><i class="material-icons">Inscribir un lugar</i></a>
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <a [routerLink]="['/lugares/update']" id= "but2" class="button fancy-button"><i class="material-icons">Actualizar un lugar</i></a>
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <a [routerLink]="['/lugares/delete']" id = "but3" class="button fancy-button"><i class="material-icons">Eliminar un lugar</i></a>
+        <div class="divider"></div>
+        <div class="divider"></div>
+      </div>
         <div class="col">
-            <a [routerLink]="['/lugares']" class="button fancy-button"><i class="material-icons">Inscribir un nuevo lugar</i>Checkout</a>
-        </div>
-    </div>
+            <div class="divider"></div>
+            <div class="divider"></div>
+            <div class="divider"></div>
+           <tr *ngFor="let lugar of lugares">
+           <div class="card" style="width: 18rem;">
+               <img src={{lugar.imagen}} class="card-img-top" alt="...">
+              <div class="card-body">
+                <td style="cursor: pointer;">
+                    <a class="figure-caption" [routerLink] ="['/lugares', { outlets: { 'detail': [lugar.nombre] } }]" >{{lugar.nombre}}</a>
+                </td>
+           </div>
+         </div>
+      </tr>
   </div>
+</div>

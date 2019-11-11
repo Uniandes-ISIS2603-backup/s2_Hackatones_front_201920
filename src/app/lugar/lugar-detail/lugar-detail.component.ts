@@ -32,7 +32,7 @@ export class LugarDetailComponent implements OnInit {
   /**
   * The editorial's id retrieved from the address
   */
-  @Input() lugar_id: number;
+  @Input() lugar_name: String;
 
   loader: any;
   /**
@@ -40,7 +40,7 @@ export class LugarDetailComponent implements OnInit {
   */
   getLugaresDetail(): void {
 
-    this.lugarService.getLugaresDetail(this.lugar_id)
+    this.lugarService.getLugaresDetail(this.lugar_name)
       .subscribe(lugar => {
         this.lugarDetail = lugar
       });
@@ -48,8 +48,8 @@ export class LugarDetailComponent implements OnInit {
 
   onLoad(params) {
 
-    this.lugar_id = parseInt(params['id']);
-    console.log(" en detail " + this.lugar_id);
+    this.lugar_name = params['nombre'];
+    console.log(" en detail " + this.lugar_name);
     this.lugarDetail = new LugarDetail();
     this.getLugaresDetail();
   }

@@ -13,6 +13,7 @@ import { LenguajeListComponent } from '../lenguaje/lenguaje-list/lenguaje-list.c
 
 import { LugarDetailComponent } from "../lugar/lugar-detail/lugar-detail.component";
 import { LugarListComponent } from "../lugar/lugar-list/lugar-list.component";
+import {LugarCreateComponent} from '../lugar/lugar-create/lugar-create.component';
 
 
 const routes: Routes = [
@@ -25,12 +26,17 @@ const routes: Routes = [
              component: LugarListComponent
             },
             {
-             path: ":id",
-            component: LugarDetailComponent,
-            outlet: "detail"
+                path: ":nombre",
+                component: LugarDetailComponent,
+                outlet: "detail"
+            },
+            {
+                path: 'add',
+                component: LugarCreateComponent
             }
+
            ]
-        },
+    },
     {
             path: 'lenguajes',
             children: [{

@@ -1,50 +1,56 @@
-<form [formGroup]="lugarForm" (ngSubmit)="createLugar(lugarForm.value)">
-	<div class="form-group mx-sm-3 mb-2">
-		<label for="nombre">
-      Nombre del lugar
-    </label>
-		<input novalidate
-    id="nombre"
-    class="form-control"
-      formControlName="nombre"
-      placeholder="Por favor, ingrese el nombre del lugar">
-
-		<div class="alert alert-danger alert-dismissible fade show"
-			*ngIf="lugarForm.get('nombre').hasError('required') && lugarForm.get('nombre').touched">
-			Ingrese un nombre valido
-		</div>
-	</div>
-
-  	<div class="form-group mx-sm-3 mb-2">
-		<label for="ciudad">
-      Ciudad
-    </label>
-		<input novalidate
-    id="ciudad"
-    class="form-control"
-      formControlName="ciudad"
-      placeholder="Por favor, ingrese la ciudad de la hackaton">
-
-		<div class="alert alert-danger alert-dismissible fade show"
-			*ngIf="lugarForm.get('ciudad').hasError('required') && lugarForm.get('ciudad').touched">
-			Ingrese una ciudad valida
-		</div>
-	</div>
-
-  	<div class="form-group mx-sm-3 mb-2">
-		<label for="direccion">
-      Direccion
-    </label>
-		<input novalidate
-    id="direccion"
-    class="form-control"
-      formControlName="direccion"
-      placeholder="Por favor, ingrese la direccion de la hackaton">
-
-		<div class="alert alert-danger alert-dismissible fade show"
-			*ngIf="lugarForm.get('direccion').hasError('required') && lugarForm.get('direccion').touched">
-			Ingrese una dirección valida
-		</div>
-	</div>
-	<button class="button mx-sm-3 mb-2" type="submit" [disabled]="lugarForm.invalid">Crear</button>
-</form>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center"><font color="white">Crear un lugar</font></h2>
+        <br>
+        <form name="lugar" (ngSubmit)="f.form.valid && createLugar()" #f="ngForm" novalidate>
+                <div class="form-group">
+                        <label for="id"><b><font color="white">ID para el lugar</font></b></label>
+                        <input type="number" name="id" class="form-control" id="id" [(ngModel)]="lugar.id"
+                            #id="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lugarId.invalid }" required>
+                        <div class="invalid-feedback">
+                            <div>Hace falta el campo del id</div>
+                        </div>
+                    </div>
+            <div class="form-group">
+                <label for="lugarCiudad"><b><font color="white">Ciudad</font></b></label>
+                <input type="text" name="lugarCiudad" class="form-control" id="lugarCiudad" [(ngModel)]="lugar.ciudad"
+                    #lugarCiudad="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lugarCiudad.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo de la ciudad</div>
+                </div>
+            </div>
+            <div class="form-group">
+                    <label for="lugarDireccion"><b><font color="white">Direccion</font></b></label>
+                    <input type="text" name="lugarDireccion" class="form-control" id="lugarDireccion" [(ngModel)]="lugar.direccion"
+                        #lugarDireccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lugarDireccion.invalid }" required>
+                    <div class="invalid-feedback">
+                        <div>Hace falta el campo de la direccion</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                        <label for="lugarImagen"><b><font color="white">Imagen</font></b></label>
+                        <input type="text" name="lugarImagen" class="form-control" id="lugarImagen" [(ngModel)]="lugar.imagen"
+                            #lugarImagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lugarImagen.invalid }" required>
+                        <div class="invalid-feedback">
+                            <div>Hace falta el campo de la imagen</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="lugarNombre"><b><font color="white">Nombre</font></b></label>
+                            <input type="text" name="lugarNombre" class="form-control" id="lugarNombre" [(ngModel)]="lugar.nombre"
+                                #lugarImagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lugarNombre.invalid }" required>
+                            <div class="invalid-feedback">
+                                <div>Hace falta el campo del nombre</div>
+                            </div>
+                        </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>
