@@ -28,12 +28,12 @@
             <div class="divider"></div>
             <div class="divider"></div>
             <div class="divider"></div>
-           <tr *ngFor="let lugar of lugares">
+           <tr *ngFor="let e of lista_lugares">
            <div class="card" style="width: 18rem;">
-               <img src={{lugar.imagen}} class="card-img-top" alt="...">
+               <img src={{e.imagen}} class="card-img-top" alt="...">
               <div class="card-body">
                 <td style="cursor: pointer;">
-                    <a class="figure-caption" [routerLink] ="['/lugares', { outlets: { 'detail': [lugar.nombre] } }]" >{{lugar.nombre}}</a>
+                    <a class="figure-caption" [routerLink] ="['/lugares', { outlets: { 'detail': [e.identificador] } }]" >{{e.nombre}}</a>
                 </td>
            </div>
          </div>

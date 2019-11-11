@@ -26,7 +26,7 @@ const routes: Routes = [
              component: LugarListComponent
             },
             {
-                path: ":nombre",
+                path: ":id",
                 component: LugarDetailComponent,
                 outlet: "detail"
             },

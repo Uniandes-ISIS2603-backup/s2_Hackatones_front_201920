@@ -25,22 +25,21 @@ export class LugarDetailComponent implements OnInit {
   /**
   * The editorial whose details we want to show
   */
-  lugarDetail: LugarDetail;
+  lugarDetail: LugarDetail = new LugarDetail();
 
 
 
   /**
   * The editorial's id retrieved from the address
   */
-  @Input() lugar_name: String;
+  @Input() lugar_id: number;
 
   loader: any;
   /**
   * The method which retrieves the books of an editorial
   */
   getLugaresDetail(): void {
-
-    this.lugarService.getLugaresDetail(this.lugar_name)
+    this.lugarService.getLugaresDetail(this.lugar_id)
       .subscribe(lugar => {
         this.lugarDetail = lugar
       });
@@ -48,8 +47,8 @@ export class LugarDetailComponent implements OnInit {
 
   onLoad(params) {
 
-    this.lugar_name = params['nombre'];
-    console.log(" en detail " + this.lugar_name);
+    this.lugar_id = parseInt(params['id']);
+    console.log(" en detail " + this.lugar_id);
     this.lugarDetail = new LugarDetail();
     this.getLugaresDetail();
   }
@@ -60,5 +59,4 @@ export class LugarDetailComponent implements OnInit {
   ngOnDestroy() {
     this.loader.unsubscribe();
   }
-
 }

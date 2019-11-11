@@ -46,7 +46,7 @@ export class LugarCreateComponent implements OnInit {
     * Creates an author
     */
     createLugar(): Lugar {
-        console.log(this.lugar.id);
+        console.log(this.lugar.identificador);
         this.lugarService.createLugar(this.lugar).subscribe(lugar => {
             this.lugares.push(lugar);
           });

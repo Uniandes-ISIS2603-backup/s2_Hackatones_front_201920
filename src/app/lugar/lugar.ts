@@ -1,7 +1,9 @@
 
 export class Lugar {
-
- id : number;   
+/**
+ * Identificador del lugar
+ */
+ identificador : any;   
 /*
 / Nombre del lugar donde se realizara la hackaton
 */
@@ -14,4 +16,8 @@ Ciudad donde se realizara el evento
 direcion del evento
 */
 direccion : String;
+/**
+ * imagen del lugar
+ */
+imagen : String;
 }
