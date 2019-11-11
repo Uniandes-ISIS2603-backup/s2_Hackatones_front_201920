@@ -15,7 +15,9 @@ export class LenguajeListComponent implements OnInit {
    * Constructor for the component
    * @param lenguajeService The author's services provider
    */
-  constructor(private lenguajeService: LenguajeService, private router: Router) { }
+  constructor(private lenguajeService: LenguajeService, private router: Router) { 
+      this.lenguajes = [];
+  }
 
   /**
    * The list of editorials which belong to the BookStore
@@ -26,8 +28,10 @@ export class LenguajeListComponent implements OnInit {
    * Asks the service to update the list of editorials
    */
   getLenguajes(): void {
-    this.lenguajeService.getLenguaje().subscribe(editorials => this.lenguajes = editorials);
+    this.lenguajeService.getLenguaje().subscribe(lenguajes => this.lenguajes = lenguajes);
   }
+
+  
 
   
   /**
