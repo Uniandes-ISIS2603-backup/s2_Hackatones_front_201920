@@ -27,4 +27,19 @@ export class LenguajeService {
     getLenguajeDetail(lenguajeId): Observable<LenguajeDetail> {
         return this.http.get<LenguajeDetail>(API_URL + "lenguaje-" + lenguajeId+".json");
     }
+
+      /** POST: añade un nuevo lenguaje al servidor */
+  createLugar(lenguaje: Lenguaje): Observable<Lenguaje> {
+    return this.http.post<Lenguaje>(API_URL + lenguajes, lenguaje);
+  }
+
+  /** DELETE: elimina un lenguaje del servidor */
+  deleteLugar(idLenguaje :  number): Observable<Lenguaje> {
+    return this.http.delete<Lenguaje>(API_URL + lenguajes + '/' + idLenguaje);
+    }
+
+  /** PUT: actualiza el lenguaje en el servidor */
+  updateLugar(lenguaje: Lenguaje): Observable<LenguajeDetail> {
+    return this.http.put<LenguajeDetail>(API_URL + lenguajes + '/' + lenguaje.id, lenguaje);
+  }
 }
