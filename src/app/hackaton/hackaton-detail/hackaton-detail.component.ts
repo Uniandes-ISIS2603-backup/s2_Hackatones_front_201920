@@ -6,8 +6,6 @@ import {ToastrService} from 'ngx-toastr';
 import {HackatonService} from '../hackaton.service';
 import {Hackaton} from '../hackaton';
 import {HackatonDetail} from '../hackaton-detail';
-import {HackatonCalificacionComponent} from '../hackaton-calificacion/hackaton-calificacion.component';
-import {HackatonAddCalificacionComponent} from '../hackaton-add-calificacion/hackaton-add-calificacion.component';
 
 @Component({
     selector: 'app-hackaton-detail',
@@ -61,32 +59,6 @@ export class HackatonDetailComponent implements OnInit, OnDestroy {
     */
     navigationSubscription;
 
-
-    /**
-     * The child HackatonCalificacionListComponent
-     */
-    @ViewChild(HackatonCalificacionComponent) calificacionListComponent: HackatonCalificacionComponent;
-
-    /**
-     * The child HackatonCalificacionListComponent
-     */
-    @ViewChild(HackatonAddCalificacionComponent) calificacionAddComponent: HackatonAddCalificacionComponent;
-
-    toggleCalificacions(): void {
-        if (this.calificacionAddComponent.isCollapsed == false) {
-            this.calificacionAddComponent.isCollapsed = true;
-        }
-        this.calificacionListComponent.isCollapsed = !this.calificacionListComponent.isCollapsed;
-    }
-
-    toggleCreateCalificacion(): void {
-        if (this.calificacionListComponent.isCollapsed == false) {
-            this.calificacionListComponent.isCollapsed = true;
-        }
-        this.calificacionAddComponent.isCollapsed = !this.calificacionAddComponent.isCollapsed;
-    }
-
-
     /**
     * The method which retrieves the details of the hackaton that
     * we want to show
@@ -102,49 +74,15 @@ export class HackatonDetailComponent implements OnInit, OnDestroy {
     * This method retrieves all the hackatons in the Hackatonstore to show them in the list
     */
     getOtherHackatons(): void {
-        this.hackatonService.getHackatons()
+        this.hackatonService.getHackaton()
             .subscribe(hackatons => {
                 this.other_hackatons = hackatons;
                 this.other_hackatons = this.other_hackatons.filter(hackaton => hackaton.id !== this.hackaton_id);
             });
     }
 
-    /**
-     * The function called when a calificacion is posted, so that the child component can refresh the list
-     */
-    updateCalificacions(): void {
-        this.getHackatonDetail();
-        this.calificacionListComponent.updateCalificaciones(this.hackatonDetail.calificaciones);
-        this.calificacionListComponent.isCollapsed = false;
-        this.calificacionAddComponent.isCollapsed = true;
-    }
+    
 
-    /**
-* This function deletes the hackaton from the HackatonStore 
-*/
-    deleteHackaton(): void {
-        this.modalDialogService.openDialog(this.viewRef, {
-            title: 'Delete a hackaton',
-            childComponent: SimpleModalComponent,
-            data: {text: 'Are you sure your want to delete this hackaton?'},
-            actionButtons: [
-                {
-                    text: 'Yes',
-                    buttonClass: 'btn btn-danger',
-                    onAction: () => {
-                        this.hackatonService.deleteHackaton(this.hackaton_id).subscribe(hackaton => {
-                            this.toastrService.success("The hackaton  ", "Hackaton deleted");
-                            this.router.navigate(['hackatons/list']);
-                        }, err => {
-                            this.toastrService.error(err, "Error");
-                        });
-                        return true;
-                    }
-                },
-                {text: 'No', onAction: () => true}
-            ]
-        });
-    }
 
     /**
     * The method which initilizes the component

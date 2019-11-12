@@ -1,0 +1,15 @@
+{
+    "id": 2,
+    "limite_participantes": 50,
+    "nombre": "Hackaton 2",
+    "tipo": "Seguridad",
+    "tema": "Vuelos",
+    "especificacion": "Mejorar la seguridad de la compra de vuelos via internet",
+    "nivel":4,
+    "imagen": "https://www.azulweb.net/wp-content/uploads/2018/05/Los-hackatones-%C2%BFuna-forma-de-explotar-a-las-personas-para-que-trabajen-gratis.png",
+    "fechaInicio": "2019-04-23T18:25:43.511Z",
+    "fechaFinal": "2019-04-25T18:25:43.511Z",
+    "premio": "Viajes gratis",
+    "finalizada": true,
+    "tamanoEquipo": 5      
+  }

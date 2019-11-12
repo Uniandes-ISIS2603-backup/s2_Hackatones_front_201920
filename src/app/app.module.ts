@@ -17,6 +17,7 @@ import {PatrocinadoresModule} from "./patrocinadores/patrocinadores.module";
 import {LenguajeModule} from "./lenguaje/lenguaje.module";
 import {UsuarioModule} from "./usuario/usuario.module";
 import { LugarModule } from './lugar/lugar.module';
+import { HackatonModule } from "./hackaton/hackaton.module";
 
 
 
@@ -46,7 +47,9 @@ import { LugarModule } from './lugar/lugar.module';
         NgbModule,
         PatrocinadoresModule,
         LenguajeModule,
-        UsuarioModule
+        UsuarioModule,
+        HackatonModule
+
     ],
     bootstrap: [AppComponent],
     providers: [
