@@ -22,6 +22,10 @@ import { InteresDetailComponent} from "../intereses/interes-detail/interes-detai
 import { InteresListComponent } from "../intereses/interes-list/interes-list.component";
 import {InteresCreateComponent} from '../intereses/interes-create/interes-create.component';
 
+import { EquipoDetailComponent} from "../equipo/equipo-detail/equipo-detail.component";
+import { EquipoListComponent } from "../equipo/equipo-list/equipo-list.component";
+import {EquipoCreateComponent} from '../equipo/equipo-create/equipo-create.component';
+
 
 const routes: Routes = [
     {
@@ -168,4 +172,3 @@ const routes: Routes = [
 export class AppRoutingModule {
 
 }
-     
