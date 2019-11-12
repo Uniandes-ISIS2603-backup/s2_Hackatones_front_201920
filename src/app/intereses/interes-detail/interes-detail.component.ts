@@ -1,31 +1,31 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { InteresesService } from '../intereses.service';
-import { Intereses } from '../intereses';
-import { InteresesDetail } from '../intereses-detail';
+import { InteresService } from '../interes.service';
+import { Interes } from '../interes';
+import { InteresDetail } from '../interes-detail';
 
 @Component({
-  selector: 'app-intereses-detail',
-  templateUrl: './intereses-detail.component.html'
+  selector: 'app-interes-detail',
+  templateUrl: './interes-detail.component.html'
 })
-export class InteresesDetailComponent implements OnInit {
+export class InteresDetailComponent implements OnInit {
 
   /**
   * The component's constructor
-  * @param editorialService The editorial's service
+  * @param interesService The editorial's service
   * @param route The route element which helps to obtain the editorial's id
   * @param toastrService The toastr to show messages to the user
   */
   constructor(
-    private interesesService: InteresesService,
+    private interesService: InteresService,
     private route: ActivatedRoute
   ) { }
 
   /**
   * The editorial whose details we want to show
   */
-  interesesDetail: InteresesDetail;
+  interesDetail: InteresDetail = new InteresDetail();
 
 
 
@@ -38,11 +38,10 @@ export class InteresesDetailComponent implements OnInit {
   /**
   * The method which retrieves the books of an editorial
   */
-  getInteresesDetail(): void {
-
-    this.interesesService.getInteresesDetail(this.interes_id)
-      .subscribe(interes => {
-        this.interesesDetail = interes
+  getInteresDetail(): void {
+    this.interesService.getInteresDetail(this.interes_id)
+      .subscribe(inter => {
+        this.interesDetail = inter
       });
   }
 
@@ -50,8 +49,8 @@ export class InteresesDetailComponent implements OnInit {
 
     this.interes_id = parseInt(params['id']);
     console.log(" en detail " + this.interes_id);
-    this.interesesDetail = new InteresesDetail();
-    this.getInteresesDetail();
+    this.interesDetail = new InteresDetail();
+    this.getInteresDetail();
   }
   ngOnInit() {
     this.loader = this.route.params.subscribe((params: Params) => this.onLoad(params));
@@ -60,5 +59,4 @@ export class InteresesDetailComponent implements OnInit {
   ngOnDestroy() {
     this.loader.unsubscribe();
   }
-
 }

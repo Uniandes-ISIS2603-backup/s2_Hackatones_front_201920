@@ -1,5 +1,5 @@
-import {Component, OnInit, OnDestroy, ViewChild, ViewContainerRef} from '@angular/core';
-import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
+import {Component, OnInit, OnDestroy, ViewChild, ViewContainerRef, Input} from '@angular/core';
+import {ActivatedRoute, Router, NavigationEnd, Params} from '@angular/router';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import {ToastrService} from 'ngx-toastr';
 
@@ -30,7 +30,7 @@ export class TecnologiaDetailComponent implements OnInit, OnDestroy {
         });
     }
 
-    tecnologia_id: number;
+    @Input() tecnologia_id: number;
 
     tecnologiaDetail: TecnologiaDetail;
 
@@ -38,14 +38,16 @@ export class TecnologiaDetailComponent implements OnInit, OnDestroy {
 
     navigationSubscription;
 
+    loader: any;
+
     /**
      * Toma el detalle de la tecnologia a mostrar
      */
     getTecnologiaDetail(): void {
         this.tecnologiaService.getTecnologiaDetail(this.tecnologia_id)
             .subscribe(tecnologiaDetail => {
-                this.tecnologiaDetail = tecnologiaDetail;
-            })
+                this.tecnologiaDetail = tecnologiaDetail
+            });
     }
 
     /**
@@ -59,14 +61,18 @@ export class TecnologiaDetailComponent implements OnInit, OnDestroy {
             })
     }
 
+    onLoad(params) {
+        this.tecnologia_id = parseInt(params('id'));
+        console.log(" en detail " + this.tecnologia_id);
+        this.tecnologiaDetail = new TecnologiaDetail();
+        this.getTecnologiaDetail();
+    }
+
     /**
      * Inicializa el componente
      */
     ngOnInit() {
-        this.tecnologia_id =+ this.route.snapshot.paramMap.get('id');
-        this.tecnologiaDetail = new TecnologiaDetail();
-        this.getTecnologiaDetail();
-        this.getOtherTecnologias();
+        this.loader = this.route.params.subscribe((params: Params) => this.onLoad(params));
     }
 
     /**
