@@ -1,6 +1,6 @@
+import { Lugar } from "../lugar/lugar";
 
 export class Hackaton {
-  
     id:number;
     
     limite_participantes:number;
@@ -26,4 +26,5 @@ export class Hackaton {
     finalizada:boolean;
 
     tamanoEquipo:number;
+
 }

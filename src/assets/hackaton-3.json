@@ -1,0 +1,15 @@
+{
+    "id": 3,
+    "limite_participantes": 50,
+    "nombre": "Hackaton 3",
+    "tipo": "Seguridad",
+    "tema": "Vuelos",
+    "especificacion": "Mejorar la seguridad de la compra de vuelos via internet",
+    "nivel":4,
+    "imagen": "https://rt00.epimg.net/retina/imagenes/2018/03/28/innovacion/1522225054_172914_1522225437_noticia_normal.jpg",
+    "fechaInicio": "2019-04-23T18:25:43.511Z",
+    "fechaFinal": "2019-04-25T18:25:43.511Z",
+    "premio": "Viajes gratis",
+    "finalizada": true,
+    "tamanoEquipo": 5      
+  }

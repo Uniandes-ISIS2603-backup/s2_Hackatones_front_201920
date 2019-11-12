@@ -15,12 +15,15 @@
             <div class="navbar-nav mr-auto mt-0">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-					   aria-haspopup="true" aria-expanded="false">Ver hackatones</a>
+					   aria-haspopup="true" aria-expanded="false">Ver Hackatones</a>
 					   	<!-- Opciones de la lista de hackatones -->
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" class="nav-item nav-link"  [routerLink]="['/lugares/list']">por lugar</a>
-                            <a class="dropdown-item" class="nav-item nav-link"  [routerLink]="['/lenguajes/list']">por lenguaje</a>
-                            <a class="dropdown-item" class="nav-item nav-link"  [routerLink]="['/patrocinadores/list']">por patrocinador</a>
+                            <a class="dropdown-item" class="nav-item nav-link"  [routerLink]="['/hackaton/list']">Todas</a>
+                            <a class="dropdown-item" class="nav-item nav-link"  [routerLink]="['/lugares/list']">por Lugar</a>
+                            <a class="dropdown-item" class="nav-item nav-link"  [routerLink]="['/interes/list']">por Interés</a>
+                            <a class="dropdown-item" class="nav-item nav-link"  [routerLink]="['/tecnologias/list']">por Tecnología</a> 
+                            <a class="dropdown-item" class="nav-item nav-link"  [routerLink]="['/lenguajes/list']">por Lenguaje</a>
+                            <a class="dropdown-item" class="nav-item nav-link"  [routerLink]="['/patrocinadores/list']">por Patrocinador</a>
                     </div>
                 </li>
 			</div>
@@ -31,7 +34,7 @@
                         <li class="right-space"><button id="register" style="text-align: right;" class="btn boton-pink fs-14 mb inscribirmeNow"  routerLink="/auth/sign-up"><span class="fa fa-user"></span>    Inscribirme</button></li>
                         <div class="divider"></div>
                         <li><button id="login" style="text-align: right;" class="btn boton fs-14 login mr mb" routerLink="/auth/login"><span class="fa fa-sign-in"></span>     Iniciar sesión</button></li>
-                   </div>
+                    </div>
                 </div>
             </div>
         </div>

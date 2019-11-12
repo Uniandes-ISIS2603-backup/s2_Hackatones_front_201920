@@ -1,3 +1,119 @@
-<p>
-hackaton-create works!
-</p>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center"><font color="white">Crear un hackaton</font></h2>
+        <br>
+        <form name="hackaton" (ngSubmit)="f.form.valid && createHackaton()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="id"><b><font color="white">Id</font></b></label>
+                <input type="text" name="id" class="form-control" id="id" [(ngModel)]="hackaton.id"
+                    #id="ngModel" [ngClass]="{ 'is-invalid': f.submitted && id.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo del id</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nombre"><b><font color="white">Nombre</font></b></label>
+                <input type="text" name="nombre" class="form-control" id="nombre" [(ngModel)]="hackaton.nombre"
+                    #nombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nombre.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo del nombre</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="limite-participantes"><b><font color="white">Limite de participantes</font></b></label>
+                <input type="number" name="limite-participantes" class="form-control" id="limite-participantes" [(ngModel)]="hackaton.limite-participantes"
+                    #limiteparticipantes="ngModel" [ngClass]="{ 'is-invalid': f.submitted && limite-participantes.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo del limite-participantes</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tema"><b><font color="white">Tema</font></b></label>
+                <input type="text" name="tema" class="form-control" id="tema" [(ngModel)]="hackaton.tema"
+                    #tema="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tema.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo del tema</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tipo"><b><font color="white">Tipo</font></b></label>
+                <input type="text" name="tipo" class="form-control" id="tipo" [(ngModel)]="hackaton.tipo"
+                    #tipo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tipo.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo del tipo</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="especificacion"><b><font color="white">Especificacion</font></b></label>
+                <input type="text" name="especificacion" class="form-control" id="especificacion" [(ngModel)]="hackaton.especificacion"
+                    #especificacion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && especificacion.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo del especificacion</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nivel"><b><font color="white">Nivel</font></b></label>
+                <input type="number" name="nivel" class="form-control" id="nivel" [(ngModel)]="hackaton.nivel"
+                    #nivel="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nivel.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo del nivel</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="imagen"><b><font color="white">Imagen</font></b></label>
+                <input type="text" name="imagen" class="form-control" id="imagen" [(ngModel)]="hackaton.imagen"
+                    #imagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && imagen.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo del imagen</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="fechaInicio"><b><font color="white">Fecha de inicio</font></b></label>
+                <input type="text" name="fechaInicio" class="form-control" id="fechaInicio" [(ngModel)]="hackaton.fechaInicio"
+                    #fechaInicio="ngModel" [ngClass]="{ 'is-invalid': f.submitted && fechaInicio.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo del fechaInicio</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="fechaFin"><b><font color="white">Fecha de fin</font></b></label>
+                <input type="text" name="fechaFin" class="form-control" id="fechaFin" [(ngModel)]="hackaton.fechaFin"
+                    #fechaFin="ngModel" [ngClass]="{ 'is-invalid': f.submitted && fechaFin.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo del fechaFin</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="premio"><b><font color="white">Premio</font></b></label>
+                <input type="text" name="premio" class="form-control" id="premio" [(ngModel)]="hackaton.premio"
+                    #premio="ngModel" [ngClass]="{ 'is-invalid': f.submitted && premio.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo del premio</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="finalizada"><b><font color="white">Finalizada</font></b></label>
+                <input type="boolean" name="finalizada" class="form-control" id="finalizada" [(ngModel)]="hackaton.finalizada"
+                    #finalizada="ngModel" [ngClass]="{ 'is-invalid': f.submitted && finalizada.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo del finalizada</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tamanoEquipo"><b><font color="white">Tamaño de los equipos</font></b></label>
+                <input type="number" name="tamanoEquipo" class="form-control" id="tamanoEquipo" [(ngModel)]="hackaton.tamanoEquipo"
+                    #tamanoEquipo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tamanoEquipo.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo del tamanoEquipo</div>
+                </div>
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="divider"></div>
+                <button type="button" [routerLink]="['/home']"  class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

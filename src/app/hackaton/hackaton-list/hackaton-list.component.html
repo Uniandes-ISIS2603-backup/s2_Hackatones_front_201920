@@ -1,3 +1,24 @@
-<p>
-hackaton-list works!
-</p>
+<div class="container-fluid">
+    <div class="col-md-2" *ngFor="let i of hackatones">
+        <td style="cursor: pointer;">
+            <a class="figure-caption" [routerLink]="['/hackaton', { outlets: { 'detail': [i.id] } }]">
+                <div class="card" style="width: 18rem;">
+                    <img src={{i.imagen}} class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">{{i.nombre}}</p>
+                    </div>
+                </div>
+            </a>
+        </td>
+    </div>
+    </div>
+    
+    <div class="divider"></div>
+    <div class="divider"></div>
+
+    <div class="col-4">
+            <div class="divider"></div>
+            <div class="divider"></div>
+            <a [routerLink]="['/hackaton/add']" id = "but1" class="button fancy-button"><i class="material-icons">Agregar una hackaton</i></a>
+            
+    </div>

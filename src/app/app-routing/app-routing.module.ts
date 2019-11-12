@@ -14,6 +14,13 @@ import { LenguajeListComponent } from '../lenguaje/lenguaje-list/lenguaje-list.c
 import { LugarDetailComponent } from "../lugar/lugar-detail/lugar-detail.component";
 import { LugarListComponent } from "../lugar/lugar-list/lugar-list.component";
 import {LugarCreateComponent} from '../lugar/lugar-create/lugar-create.component';
+import { HackatonListComponent } from '../hackaton/hackaton-list/hackaton-list.component';
+import { HackatonDetailComponent } from '../hackaton/hackaton-detail/hackaton-detail.component';
+import { HackatonCreateComponent } from '../hackaton/hackaton-create/hackaton-create.component';
+
+import { InteresDetailComponent} from "../intereses/interes-detail/interes-detail.component";
+import { InteresListComponent } from "../intereses/interes-list/interes-list.component";
+import {InteresCreateComponent} from '../intereses/interes-create/interes-create.component';
 
 
 const routes: Routes = [
@@ -33,6 +40,46 @@ const routes: Routes = [
             {
                 path: 'add',
                 component: LugarCreateComponent
+            }
+
+           ]
+    },
+    {
+        path: "hackaton",
+        children: 
+           [
+            {
+             path: "list",
+             component: HackatonListComponent
+            },
+            {
+                path: ":id",
+                component: HackatonDetailComponent,
+                outlet: "detail"
+            },
+            {
+                path: 'add',
+                component: HackatonCreateComponent
+            }
+
+           ]
+    },
+    {
+        path: "interes",
+        children: 
+           [
+            {
+             path: "list",
+             component: InteresListComponent
+            },
+            {
+                path: ":id",
+                component: InteresDetailComponent,
+                outlet: "detail"
+            },
+            {
+                path: 'add',
+                component: InteresCreateComponent
             }
 
            ]

@@ -1,6 +1,6 @@
-//import { Patrocinador } from '../patrocinador/patrocinador';
+import { Patrocinador } from '../patrocinadores/patrocinador';
 import { Hackaton } from './hackaton';
-import { Calificacion } from './calificacion';
+//import { Calificacion } from './calificacion';
 
 /**
 * This class represents a book of the BookStore. 
@@ -10,10 +10,10 @@ export class HackatonDetail extends Hackaton {
     /**
      * Relacion cero o muchas califiaciones
      */
-    calificaciones:Calificacion[];
+    //calificaciones:Calificacion[];
     
     /**
      * Relacion uno o muchos patrocinadores
      */
-    //patrocinadores:Patrocinador[];
+    patrocinadores:Patrocinador[];
 }

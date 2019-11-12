@@ -7,6 +7,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxPermissionsModule} from 'ngx-permissions';
 import { TecnologiaListComponent } from './tecnologia-list/tecnologia-list.component';
+import {TecnologiaDetailComponent} from './tecnologia-detail/tecnologia-detail.component';
+import {TecnologiaCreateComponent} from './tecnologia-create/tecnologia-create.component';
 
 @NgModule ({
     imports: [
@@ -20,7 +22,9 @@ import { TecnologiaListComponent } from './tecnologia-list/tecnologia-list.compo
         NgxPermissionsModule
     ],
     declarations: [
-        TecnologiaListComponent 
+        TecnologiaListComponent,
+        TecnologiaDetailComponent,
+        TecnologiaCreateComponent 
     ]
 })
 export class TecnologiaModule { }

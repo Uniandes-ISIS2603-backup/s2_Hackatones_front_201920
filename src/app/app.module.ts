@@ -17,11 +17,9 @@ import {PatrocinadoresModule} from "./patrocinadores/patrocinadores.module";
 import {LenguajeModule} from "./lenguaje/lenguaje.module";
 import {UsuarioModule} from "./usuario/usuario.module";
 import { LugarModule } from './lugar/lugar.module';
-
-
-
-
-
+import { InteresModule } from './intereses/interes.module';
+import {TecnologiaModule} from './tecnologia/tecnologia.module';
+import { HackatonModule } from "./hackaton/hackaton.module";
 
 @NgModule({
     declarations: [
@@ -35,7 +33,9 @@ import { LugarModule } from './lugar/lugar.module';
         ModalDialogModule.forRoot(),
         AuthModule,
         LugarModule,
+        InteresModule,
         FormsModule,
+        TecnologiaModule,
         ToastrModule.forRoot({
             timeOut: 10000,
             positionClass: 'toast-bottom-right',
@@ -46,7 +46,9 @@ import { LugarModule } from './lugar/lugar.module';
         NgbModule,
         PatrocinadoresModule,
         LenguajeModule,
-        UsuarioModule
+        UsuarioModule,
+        HackatonModule
+
     ],
     bootstrap: [AppComponent],
     providers: [
