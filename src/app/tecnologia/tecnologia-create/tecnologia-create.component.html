@@ -1,0 +1,25 @@
+<div class = "container-fluid">
+    <div class = "row">
+        <div class = "col-12">
+            <br>
+            <h2 class = "text-center">Agregar una nueva tecnología</h2>
+            <br>
+            <form name = "tecnologia" (ngSumbit) = "f.form.valid && createTecnologia()" #f="ngForm" novalidate>
+                <div class = "form-group">
+                    <label for = "tecnologiaName"><b>Name</b></label>
+                    <input type="text" name="tecnologiaName" class = "form-control" id = "tecnologiaName" [(ngModel)] = "tecnologia.name"
+                        #tecnologiaName="ngModel" [ngClass]="{ 'is-invalid': f.sumbitted && tecnologiaName.invalid }" required>
+                    <div class = "invalid-feedback">
+                        <div>El nombre de la tecnología es obligatorio</div>
+                    </div>
+                </div>
+                <br>
+                <div class = "row form-inline justify-content center align-self-center">
+                    <button type = "sumbit" class = "btn btn-primary">Crear</button>
+                    <div class = "divider"></div>
+                    <button type = "button" class = "btn btn-danger" (click) = "cancelCreation()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class = "container-fluid">
+    <div class="col-md-2">
+        <table class="table table-striped">
+            <thead class = "thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let t of tecnologias">
+                    <td>{{t.id}}</td>
+                    <td style="cursor: pointer;"><a class="figure-catpion" [routerLink] = "['/tecnologias', {outlets : { 'detail': [t.id] } }]">{{t.nombre}}</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class = 'col'>
+            <a [routerLink]="['/tecnologias']" class = "button fancy-button"><i class = "material-icons">Crear una nueva tecnología</i>Checkout</a>
+        </div>
+    </div>
+</div>
