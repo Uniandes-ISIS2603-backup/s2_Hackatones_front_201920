@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="col">
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <div class="divider"></div>
+    </div>  
+    <div class="col-4">
+        <a [routerLink]="['/interes/add']" id = "but1" class="button fancy-button"><i class="material-icons">Inscribir un interes</i></a>
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <a [routerLink]="['/interes/update']" id= "but2" class="button fancy-button"><i class="material-icons">Actualizar un interes</i></a>
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <a [routerLink]="['/interes/delete']" id = "but3" class="button fancy-button"><i class="material-icons">Eliminar un interes</i></a>
+        <div class="divider"></div>
+        <div class="divider"></div>
+    </div>
+        <div class="col">
+            <div class="divider"></div>
+            <div class="divider"></div>
+            <div class="divider"></div>
+           <tr *ngFor="let e of lista_intereses">
+           <div class="card" style="width: 18rem;">
+               <img src={{e.imagen}} class="card-img-top" alt="...">
+              <div class="card-body">
+                <td style="cursor: pointer;">
+                    <a class="figure-caption" [routerLink] ="['/interes', { outlets: { 'detail': [e.id] } }]" >{{e.nombre}}</a>
+                </td>
+              </div>
+           </div>
+          </tr>
+      </div>
+    </div>
