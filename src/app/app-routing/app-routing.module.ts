@@ -40,6 +40,26 @@ const routes: Routes = [
            ]
     },
     {
+        path: "interes",
+        children: 
+           [
+            {
+             path: "list",
+             component: LugarListComponent
+            },
+            {
+                path: ":id",
+                component: LugarDetailComponent,
+                outlet: "detail"
+            },
+            {
+                path: 'add',
+                component: LugarCreateComponent
+            }
+
+           ]
+    },
+    {
             path: 'lenguajes',
             children: [{
               path: 'list',
