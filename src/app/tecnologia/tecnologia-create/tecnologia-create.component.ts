@@ -9,7 +9,7 @@ import {Tecnologia} from '../tecnologia';
 @Component ({
     selector: 'app-tecnologia-create',
     templateUrl: './tecnologia-create.component.html',
-    styleUrls: ['.tecnologia-create.component.css'],
+    styleUrls: ['./tecnologia-create.component.css'],
     providers: [DatePipe]
 })
 export class TecnologiaCreateComponent implements OnInit {

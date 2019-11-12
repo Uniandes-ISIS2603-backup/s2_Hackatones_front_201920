@@ -8,6 +8,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxPermissionsModule} from 'ngx-permissions';
 import { TecnologiaListComponent } from './tecnologia-list/tecnologia-list.component';
 import {TecnologiaDetailComponent} from './tecnologia-detail/tecnologia-detail.component';
+import {TecnologiaCreateComponent} from './tecnologia-create/tecnologia-create.component';
 
 @NgModule ({
     imports: [
@@ -22,7 +23,8 @@ import {TecnologiaDetailComponent} from './tecnologia-detail/tecnologia-detail.c
     ],
     declarations: [
         TecnologiaListComponent,
-        TecnologiaDetailComponent 
+        TecnologiaDetailComponent,
+        TecnologiaCreateComponent 
     ]
 })
 export class TecnologiaModule { }
