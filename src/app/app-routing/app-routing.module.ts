@@ -14,6 +14,8 @@ import { LenguajeListComponent } from '../lenguaje/lenguaje-list/lenguaje-list.c
 import { LugarDetailComponent } from "../lugar/lugar-detail/lugar-detail.component";
 import { LugarListComponent } from "../lugar/lugar-list/lugar-list.component";
 import {LugarCreateComponent} from '../lugar/lugar-create/lugar-create.component';
+import { TecnologiaListComponent } from '../tecnologia/tecnologia-list/tecnologia-list.component';
+import { TecnologiaDetailComponent } from '../tecnologia/tecnologia-detail/tecnologia-detail.component';
 
 
 const routes: Routes = [
@@ -65,6 +67,21 @@ const routes: Routes = [
                }
            ]
        },
+    {
+        path: 'tecnologias',
+            children:
+            [
+                {
+                    path: 'list',
+                    component: TecnologiaListComponent
+                },
+                {
+                    path: ':id',
+                    component: TecnologiaDetailComponent,
+                    outlet: 'detail'
+                }
+            ]
+    },
      {
         path: 'auth',
         children: [

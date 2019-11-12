@@ -6,7 +6,6 @@ import {Tecnologia} from './tecnologia';
 import {TecnologiaDetail} from './tecnologia-detail';
 
 import {environment} from '../../environments/environment';
-import { Usuario } from '../usuario/usuario';
 const API_URL = environment.apiURL;
 const tecnologias = '/tecnologia';
 
@@ -56,7 +55,7 @@ export class TecnologiaService {
      * @param tecnologiaId El id de la tecnologia
      * @returns True si la tecnologia, False si no fue eliminada
      */
-    deleteTecnologia(tecnologiaId): Observable<TecnologiaDetail> {
+    deleteTecnologia(tecnologiaId): Observable<TecnologiaDetail> { 
         return this.http.delete<TecnologiaDetail>(API_URL + tecnologias + '/' +tecnologiaId);
     }
 }
