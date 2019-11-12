@@ -1,0 +1,15 @@
+{
+    "id": 1,
+    "limite_participantes": 50,
+    "nombre": "Hackaton 1",
+    "tipo": "Seguridad",
+    "tema": "Vuelos",
+    "especificacion": "Mejorar la seguridad de la compra de vuelos via internet",
+    "nivel":4,
+    "imagen": "https://i.blogs.es/7f08d4/hackatones/450_1000.jpg",
+    "fechaInicio": "2019-04-23T18:25:43.511Z",
+    "fechaFinal": "2019-04-25T18:25:43.511Z",
+    "premio": "Viajes gratis",
+    "finalizada": true,
+    "tamanoEquipo": 5       
+}

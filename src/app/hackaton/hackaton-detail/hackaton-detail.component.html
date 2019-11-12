@@ -1,3 +1,40 @@
-<p>
-hackaton-detail works!
-</p>
+<div class="panel panel-default">
+	<div>
+		<div class="border margin">
+			<p class="h3 p-3"><font color="white">{{hackatonDetail.nombre}}</font></p>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<div class="thumb">
+								<img class="img-fluid" src="{{hackatonDetail.imagen}}"/>
+              </div>
+						</div>
+					</div>
+					<div class="col-md-8">
+						<dl>
+							<dt> <font color="white">Tipo</font></dt>
+							<dd><font color="white">{{hackatonDetail.tipo}}</font></dd>
+							<dt> <font color="white">Limite de Participantes</font></dt>
+							<dd><font color="white">{{hackatonDetail.limite_participantes}}</font></dd>
+							<dt><font color="white"> Tamaño de los eqipos</font></dt>
+							<dd><font color="white">{{hackatonDetail.tamanoEquipo}}</font></dd>
+							<dt> <font color="white">Tema</font></dt>
+							<dd><font color="white">{{hackatonDetail.tema}}</font></dd>
+							<dt><font color="white"> Especificación</font></dt>
+							<dd><font color="white">{{hackatonDetail.especificacion}}</font></dd>
+							<dt> <font color="white">Nivel</font></dt>
+							<dd><font color="white">{{hackatonDetail.nivel}}</font></dd>
+							<dt><font color="white"> Premio</font></dt>
+							<dd><font color="white">{{hackatonDetail.premio}}</font></dd>
+							<dt><font color="white">Fecha inicio</font></dt>
+							<dd><font color="white">{{hackatonDetail.fechaInicio| date:'yyyy-MM-dd'}}</font></dd>
+							<dt><font color="white">Fecha Final</font></dt>
+							<dd><font color="white">{{hackatonDetail.fechaFinal| date:'yyyy-MM-dd'}}</font></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+        </div>
+	</div>
+</div>

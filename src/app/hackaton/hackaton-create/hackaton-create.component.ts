@@ -46,7 +46,7 @@ export class HackatonCreateComponent implements OnInit {
 
     /**
     * Creates a new hackaton
-    */
+    *
     createHackaton(): Hackaton {
        
         this.hackatonService.createHackaton(this.hackaton)
@@ -58,7 +58,7 @@ export class HackatonCreateComponent implements OnInit {
             });
         return this.hackaton;
     }
-
+    */
     /**
     * This function will initialize the component
     */

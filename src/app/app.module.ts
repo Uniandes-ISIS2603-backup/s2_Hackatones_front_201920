@@ -19,12 +19,7 @@ import {UsuarioModule} from "./usuario/usuario.module";
 import { LugarModule } from './lugar/lugar.module';
 import { InteresModule } from './intereses/interes.module';
 import {TecnologiaModule} from './tecnologia/tecnologia.module';
-
-
-
-
-
-
+import { HackatonModule } from "./hackaton/hackaton.module";
 
 @NgModule({
     declarations: [
@@ -51,7 +46,9 @@ import {TecnologiaModule} from './tecnologia/tecnologia.module';
         NgbModule,
         PatrocinadoresModule,
         LenguajeModule,
-        UsuarioModule
+        UsuarioModule,
+        HackatonModule
+
     ],
     bootstrap: [AppComponent],
     providers: [

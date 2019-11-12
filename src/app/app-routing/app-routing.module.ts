@@ -14,8 +14,9 @@ import { LenguajeListComponent } from '../lenguaje/lenguaje-list/lenguaje-list.c
 import { LugarDetailComponent } from "../lugar/lugar-detail/lugar-detail.component";
 import { LugarListComponent } from "../lugar/lugar-list/lugar-list.component";
 import {LugarCreateComponent} from '../lugar/lugar-create/lugar-create.component';
-import { TecnologiaListComponent } from '../tecnologia/tecnologia-list/tecnologia-list.component';
-import { TecnologiaDetailComponent } from '../tecnologia/tecnologia-detail/tecnologia-detail.component';
+import { HackatonListComponent } from '../hackaton/hackaton-list/hackaton-list.component';
+import { HackatonDetailComponent } from '../hackaton/hackaton-detail/hackaton-detail.component';
+import { HackatonCreateComponent } from '../hackaton/hackaton-create/hackaton-create.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,25 @@ const routes: Routes = [
             {
                 path: 'add',
                 component: LugarCreateComponent
+            }
+
+           ]
+    },{
+        path: "hackaton",
+        children: 
+           [
+            {
+             path: "list",
+             component: HackatonListComponent
+            },
+            {
+                path: ":id",
+                component: HackatonDetailComponent,
+                outlet: "detail"
+            },
+            {
+                path: 'add',
+                component: HackatonCreateComponent
             }
 
            ]
@@ -87,21 +107,6 @@ const routes: Routes = [
                }
            ]
        },
-    {
-        path: 'tecnologias',
-            children:
-            [
-                {
-                    path: 'list',
-                    component: TecnologiaListComponent
-                },
-                {
-                    path: ':id',
-                    component: TecnologiaDetailComponent,
-                    outlet: 'detail'
-                }
-            ]
-    },
      {
         path: 'auth',
         children: [
