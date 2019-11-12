@@ -1,69 +1,71 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {DatePipe} from '@angular/common';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {ToastrService} from 'ngx-toastr';
-
 import {HackatonService} from '../hackaton.service';
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import {Hackaton} from '../hackaton';
 
 @Component({
     selector: 'app-hackaton-create',
     templateUrl: './hackaton-create.component.html',
-    styleUrls: ['./hackaton-create.component.css'],
-    providers: [DatePipe]
+    styleUrls: ['./hackaton-create.component.css']
 })
 export class HackatonCreateComponent implements OnInit {
 
     /**
     * Constructor for the component
-    * @param hackatonService The hackatons' services provider
-    * @param authorService The authors' services provider
-    * @param editorialService The editorials' services provider
+    * @param hackatonService The author's services provider
     * @param toastrService The toastr to show messages to the user
-    * @param router The router
     */
-    constructor(
-        private dp: DatePipe,
-        private hackatonService: HackatonService,
-        private toastrService: ToastrService,
-        private router: Router
-    ) {}
+   constructor(
+    private hackatonService: HackatonService,
+    private toastrService: ToastrService
+) {}
 
-    /**
-    * The new hackaton
-    */
-    hackaton: Hackaton;
+/**
+* The new author
+*/
+hackaton: Hackaton;
 
-    
-    /**
-    * Cancels the creation of the new hackaton
-    * Redirects to the hackatons' list page
-    */
-    cancelCreation(): void {
-        this.toastrService.warning('The hackaton wasn\'t created', 'Hackaton creation');
-        this.router.navigate(['/hackatons/list']);
-    }
+hackatonForm: FormGroup;
 
-    /**
-    * Creates a new hackaton
-    *
-    createHackaton(): Hackaton {
-       
-        this.hackatonService.createHackaton(this.hackaton)
-            .subscribe(hackaton => {
-                this.hackaton.id = hackaton.id;
-                this.router.navigate(['/hackatons/' + hackaton.id]);
-            }, err => {
-                this.toastrService.error(err, 'Error');
-            });
-        return this.hackaton;
-    }
-    */
-    /**
-    * This function will initialize the component
-    */
-    ngOnInit() {
-        this.hackaton = new Hackaton();
-    }
+hackatones : Hackaton[] = new Array();
 
+/**
+* The output which tells the parent component
+* that the user no longer wants to create an author
+*/
+@Output() cancel = new EventEmitter();
+
+/**
+* The output which tells the parent component
+* that the user created a new author
+*/
+@Output() create = new EventEmitter();
+
+/**
+* Creates an author
+*/
+createHackaton(): Hackaton {    
+    this.hackatonService.createHackaton(this.hackaton).subscribe(hackaton => {
+        this.hackatones.push(hackaton);
+      });
+            this.create.emit();
+            this.toastrService.success("The hackaton was created", "Hackaton creation");
+    return this.hackaton;
+}
+
+/**
+* Emits the signal to tell the parent component that the
+* user no longer wants to create an user
+*/
+cancelCreation(): void {
+    this.cancel.emit();
+}
+
+/**
+* This function will initialize the component
+*/
+ngOnInit() {
+    this.hackaton = new Hackaton();
+}
 }
