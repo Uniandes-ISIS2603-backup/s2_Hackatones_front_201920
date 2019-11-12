@@ -18,6 +18,10 @@ import { HackatonListComponent } from '../hackaton/hackaton-list/hackaton-list.c
 import { HackatonDetailComponent } from '../hackaton/hackaton-detail/hackaton-detail.component';
 import { HackatonCreateComponent } from '../hackaton/hackaton-create/hackaton-create.component';
 
+import { InteresDetailComponent} from "../intereses/interes-detail/interes-detail.component";
+import { InteresListComponent } from "../intereses/interes-list/interes-list.component";
+import {InteresCreateComponent} from '../intereses/interes-create/interes-create.component';
+
 
 const routes: Routes = [
     {
@@ -39,7 +43,8 @@ const routes: Routes = [
             }
 
            ]
-    },{
+    },
+    {
         path: "hackaton",
         children: 
            [
@@ -65,16 +70,16 @@ const routes: Routes = [
            [
             {
              path: "list",
-             component: LugarListComponent
+             component: InteresListComponent
             },
             {
                 path: ":id",
-                component: LugarDetailComponent,
+                component: InteresDetailComponent,
                 outlet: "detail"
             },
             {
                 path: 'add',
-                component: LugarCreateComponent
+                component: InteresCreateComponent
             }
 
            ]
