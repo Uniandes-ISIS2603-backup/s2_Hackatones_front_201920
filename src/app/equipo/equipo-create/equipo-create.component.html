@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center"><font color="white">Crear un equipo</font></h2>
+        <br>
+        <form name="equipo" (ngSubmit)="f.form.valid && createHackaton()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="id"><b><font color="white">Id</font></b></label>
+                <input type="text" name="id" class="form-control" id="id" [(ngModel)]="equipo.id"
+                    #id="ngModel" [ngClass]="{ 'is-invalid': f.submitted && id.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo del id</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nombre"><b><font color="white">Nombre</font></b></label>
+                <input type="text" name="nombre" class="form-control" id="nombre" [(ngModel)]="equipo.nombre"
+                    #nombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nombre.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo del nombre</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="es-ganador"><b><font color="white">El equipo gano</font></b></label>
+                <input type="string" name="es-ganador" class="form-control" id="es-ganador" [(ngModel)]="equipo.es-ganador"
+                    #esganador="ngModel" [ngClass]="{ 'is-invalid': f.submitted && es-ganador.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo de es es ganador</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="imagen"><b><font color="white">Imagen</font></b></label>
+                <input type="text" name="imagen" class="form-control" id="imagen" [(ngModel)]="equipo.imagen"
+                    #imagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && imagen.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo del imagen</div>
+                </div>
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="divider"></div>
+                <button type="button" [routerLink]="['/home']"  class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

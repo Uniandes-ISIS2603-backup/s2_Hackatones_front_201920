@@ -1,0 +1,20 @@
+[{
+  "id": 1,
+  "name": "Green Bay",
+  "esGanador": "No"
+
+}, {
+  "id": 2,
+  "name": "Cardinals",
+  "esGanador": "No"
+},
+{
+  "id": 3,
+  "name": "Broncos",
+  "esGanador": "No"
+},
+{
+  "id": 4,
+  "name": "Celtics",
+  "esGanador": "No"
+}]

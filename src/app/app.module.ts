@@ -20,6 +20,7 @@ import { LugarModule } from './lugar/lugar.module';
 import { InteresModule } from './intereses/interes.module';
 import {TecnologiaModule} from './tecnologia/tecnologia.module';
 import { HackatonModule } from "./hackaton/hackaton.module";
+import { EquipoModule } from "./equipo/equipo.module";
 
 @NgModule({
     declarations: [
@@ -33,6 +34,7 @@ import { HackatonModule } from "./hackaton/hackaton.module";
         ModalDialogModule.forRoot(),
         AuthModule,
         LugarModule,
+        EquipoModule,
         InteresModule,
         FormsModule,
         TecnologiaModule,
