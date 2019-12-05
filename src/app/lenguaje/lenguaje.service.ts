@@ -1,14 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Lenguaje } from './lenguaje';
 import { LenguajeDetail } from './lenguaje-detail';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import {environment} from '../../environments/environment';
 
-const API_URL = '../../assets/';
-const lenguajes = 'lenguajes.json';
+
+
+const API_URL = environment.apiURL;
+const lenguajes = '/lenguajes';
 
 @Injectable()
 export class LenguajeService {
+
+  httpOptions = {
+    headers: new HttpHeaders({ "Content-Type": "application/json" })
+  };
+
 
   /**
     * Constructor of the service
@@ -25,7 +33,7 @@ export class LenguajeService {
     * @returns The editorial
     */
     getLenguajeDetail(lenguajeId): Observable<LenguajeDetail> {
-        return this.http.get<LenguajeDetail>(API_URL + "lenguaje-" + lenguajeId+".json");
+        return this.http.get<LenguajeDetail>(API_URL + lenguajes +'/'+ lenguajeId);
     }
 
       /** POST: añade un nuevo lenguaje al servidor */
