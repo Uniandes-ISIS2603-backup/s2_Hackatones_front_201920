@@ -7,6 +7,7 @@ import {HackatonService} from '../hackaton.service';
 import {Hackaton} from '../hackaton';
 import {HackatonDetail} from '../hackaton-detail';
 import { Lugar } from '../../lugar/lugar';
+import { Interes } from '../../intereses/interes';
 
 @Component({
     selector: 'app-hackaton-detail',
@@ -70,10 +71,12 @@ export class HackatonDetailComponent implements OnInit, OnDestroy {
                 this.hackatonDetail = hackatonDetail;
             });
        var  lugar_detail : Lugar = new Lugar;
-
        lugar_detail.identificador = this.hackaton_id;
-
         this.hackatonDetail.lugar = lugar_detail;
+
+        var interes_detail : Interes = new Interes;
+        interes_detail.id = this.hackaton_id;
+        this.hackatonDetail.interes = interes_detail;
     }
 
     /**
