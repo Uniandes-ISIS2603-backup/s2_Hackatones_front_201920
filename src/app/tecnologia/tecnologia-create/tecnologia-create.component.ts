@@ -11,6 +11,11 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 })
 export class TecnologiaCreateComponent implements OnInit {
 
+    /**
+     * Crea 
+     * @param tecnologiaService 
+     * @param toastrService 
+     */
     constructor(
         private tecnologiaService: TecnologiaService,
         private toastrService: ToastrService
