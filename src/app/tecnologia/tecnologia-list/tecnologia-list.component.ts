@@ -1,6 +1,5 @@
-import {Component, OnInit, Input} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import 'rxjs/add/operator/filter';
+import {Component, OnInit} from '@angular/core';
+import {Route} from '@angular/router';
 
 import {Tecnologia} from '../../tecnologia/tecnologia';
 import {TecnologiaService} from '../../tecnologia/tecnologia.service';
@@ -14,40 +13,24 @@ export class TecnologiaListComponent implements OnInit {
     /**
      *  La lista de tecnologias a mostrar
      */
-    @Input() tecnologias: Tecnologia[];
+    tecnologias: Tecnologia[];
 
     /**
      * El constructor del componente
      */
-    constructor(private tecnologiaService: TecnologiaService, private route: ActivatedRoute) {}
-
-    allTecnologias: string = 'no';
+    constructor(private tecnologiaService: TecnologiaService, private router: Route) { this.tecnologias = []; }
 
     /**
      * Toma todas las tecnologias de los participantes para mostrar en la lista
      */
     getTecnologias(): void {
-        this.tecnologiaService.getTecnologias()
-            .subscribe(tecnologias => {
-                this.tecnologias = tecnologias;
-            })
+        this.tecnologiaService.getTecnologias().subscribe(tecnologias => this.tecnologias = tecnologias);
     }
 
     /**
      * El metodo que inicializa el componente
      */
     ngOnInit() {
-        this.route.queryParams
-            .filter(params => params.allTecnologias)
-            .subscribe(params => {
-                console.log(params);
-
-                this.allTecnologias = params.allTecnologias;
-                console.log(this.allTecnologias);
-            });
-        if (this.allTecnologias == 'yes') {
-            console.log("alltecnologias");
-            this.getTecnologias();
-        }
+        this.getTecnologias();
     }
 }

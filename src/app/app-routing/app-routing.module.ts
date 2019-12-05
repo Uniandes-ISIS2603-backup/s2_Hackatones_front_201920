@@ -26,6 +26,9 @@ import {InteresCreateComponent} from '../intereses/interes-create/interes-create
 import { EquipoDetailComponent} from "../equipo/equipo-detail/equipo-detail.component";
 import { EquipoListComponent } from "../equipo/equipo-list/equipo-list.component";
 import {EquipoCreateComponent} from '../equipo/equipo-create/equipo-create.component';
+import { TecnologiaDetailComponent } from '../tecnologia/tecnologia-detail/tecnologia-detail.component';
+import { TecnologiaListComponent } from '../tecnologia/tecnologia-list/tecnologia-list.component';
+import { TecnologiaCreateComponent } from '../tecnologia/tecnologia-create/tecnologia-create.component';
 
 
 const routes: Routes = [
@@ -120,7 +123,25 @@ const routes: Routes = [
                 component: PatrocinadoresCreateComponent
             }
            ]
-       },
+    },
+    {
+        path: 'tecnologias',
+        children: [
+            {
+                path: 'list',
+                component: TecnologiaListComponent
+            },
+            {
+                path:':id',
+                component: TecnologiaDetailComponent,
+                outlet: 'detail'
+            },
+            {
+                path:'add',
+                component: TecnologiaCreateComponent
+            }
+        ]
+    },
      {
         path: 'auth',
         children: [

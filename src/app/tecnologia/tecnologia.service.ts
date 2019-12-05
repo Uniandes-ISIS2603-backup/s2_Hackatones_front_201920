@@ -6,6 +6,7 @@ import {Tecnologia} from './tecnologia';
 import {TecnologiaDetail} from './tecnologia-detail';
 
 import {environment} from '../../environments/environment';
+
 const API_URL = environment.apiURL;
 const tecnologias = '/tecnologia';
 
@@ -36,7 +37,7 @@ export class TecnologiaService {
      * @param tecnologiaId El id de la tecnologia a consultar
      * @returns Los detalles de la tecnologia
      */
-    getTecnologiaDetail(tecnologiaId): Observable<TecnologiaDetail> {
+    getTecnologiaDetail(tecnologiaId: number): Observable<TecnologiaDetail> {
         return this.http.get<TecnologiaDetail>(API_URL + tecnologias + '/' + tecnologiaId);
     }
 

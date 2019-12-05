@@ -9,6 +9,7 @@ import {NgxPermissionsModule} from 'ngx-permissions';
 import { TecnologiaListComponent } from './tecnologia-list/tecnologia-list.component';
 import {TecnologiaDetailComponent} from './tecnologia-detail/tecnologia-detail.component';
 import {TecnologiaCreateComponent} from './tecnologia-create/tecnologia-create.component';
+import { TecnologiaService } from './tecnologia.service';
 
 @NgModule ({
     imports: [
@@ -25,6 +26,7 @@ import {TecnologiaCreateComponent} from './tecnologia-create/tecnologia-create.c
         TecnologiaListComponent,
         TecnologiaDetailComponent,
         TecnologiaCreateComponent 
-    ]
+    ],
+    providers: [TecnologiaService]
 })
 export class TecnologiaModule { }

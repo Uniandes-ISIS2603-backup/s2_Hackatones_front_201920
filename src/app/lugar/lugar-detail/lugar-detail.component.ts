@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, NavigationEnd } from '@angular/router';
 
 import { LugarService } from '../lugar.service';
 import { Lugar } from '../lugar';
