@@ -5,6 +5,6 @@ export class InteresDetail extends Interes {
 /**
  * descripcion del intereses
  */
-descripcion : String;
+descripcion : string;
 
 }

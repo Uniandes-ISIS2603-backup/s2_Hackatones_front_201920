@@ -12,5 +12,5 @@ export class Lenguaje
     /**
     * The lenguaje's imagen
     */
-    imagen : String;
+    imagen : string;
 }

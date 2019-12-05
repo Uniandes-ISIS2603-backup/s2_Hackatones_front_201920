@@ -7,17 +7,17 @@ export class Lugar {
 /*
 / Nombre del lugar donde se realizara la hackaton
 */
- nombre: String;
+ nombre: string;
 /*
 Ciudad donde se realizara el evento
 */
- ciudad : String;
+ ciudad : string;
 /*
 direcion del evento
 */
-direccion : String;
+direccion : string;
 /**
  * imagen del lugar
  */
-imagen : String;
+imagen : string;
 }
