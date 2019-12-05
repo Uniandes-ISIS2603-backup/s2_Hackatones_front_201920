@@ -42,7 +42,7 @@ export class TecnologiaDetailComponent implements OnInit, OnDestroy {
     }
 
     /**
-     * Inicializa el componente
+     * Inicializa el componente.
      */
     ngOnInit() {
         this.loader = this.route.params.subscribe((params: Params) => this.onLoad(params));
