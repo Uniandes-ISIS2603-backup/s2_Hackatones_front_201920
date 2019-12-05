@@ -5,26 +5,26 @@
         <br>
         <form name="tecnologia" (ngSubmit)="f.form.valid && editTecnologia()" #f="ngForm" novalidate>
             <div class="form-group">
-                <label for="tecnologiaNombre"><b><font color="white">Nombre</font></b></label>
-                <input type="text" name="tecnologiaNombre" class="form-control" id="tecnologiaNombre" [(ngModel)]="tecnologia.nombre"
-                       #tecnologiaNombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tecnologiaNombre.invalid }" required>
+                <label for="nombre"><b><font color="white">Nombre</font></b></label>
+                <input type="text" name="nombre" class="form-control" id="nombre" [(ngModel)]="tecnologia.nombre"
+                       #nombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nombre.invalid }" required>
                        <div class="invalid-feedback">
                     <div>The tecnologia's name is missing</div>
                 </div>
             </div>
             <div class="form-group">
-                <label for="tecnologiaDescripcion"><b><font color="white">Descripción</font></b></label>
-                <textarea name="tecnologiaDescripcion" class="form-control" id="tecnologiaDescripcion" [(ngModel)]="tecnologia.descripcion"
-                          #tecnologiaDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tecnologiaDescripcion.invalid }"
+                <label for="descripcion"><b><font color="white">Descripción</font></b></label>
+                <textarea name="descripcion" class="form-control" id="descripcion" [(ngModel)]="tecnologia.descripcion"
+                          #descripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && descripcion.invalid }"
                           required></textarea>
                 <div class="invalid-feedback">
                     <div>The tecnologia's descripcion is missing</div>
                 </div>
             </div>
             <div class="form-group">
-                <label for="tecnologiaImage"><b><font color="white">Imagen</font></b></label>
-                <input type="text" name="tecnologiaImagen" class="form-control" id="tecnologiaImagen" [(ngModel)]="tecnologia.imagen"
-                       #tecnologiaImagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tecnologiaImagen.invalid }" required>
+                <label for="image"><b><font color="white">Imagen</font></b></label>
+                <input type="text" name="imagen" class="form-control" id="imagen" [(ngModel)]="tecnologia.imagen"
+                       #imagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && imagen.invalid }" required>
                        <div class="invalid-feedback">
                     <div>The tecnologia's imagen is missing</div>
                 </div>

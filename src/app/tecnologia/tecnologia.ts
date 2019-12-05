@@ -1,5 +1,5 @@
 export class Tecnologia {
     id: number;
-    name: string;
+    nombre: string;
     imagen: string;
 }
