@@ -6,6 +6,7 @@ import {ToastrService} from 'ngx-toastr';
 import {HackatonService} from '../hackaton.service';
 import {Hackaton} from '../hackaton';
 import {HackatonDetail} from '../hackaton-detail';
+import { Lugar } from '../../lugar/lugar';
 
 @Component({
     selector: 'app-hackaton-detail',
@@ -68,6 +69,11 @@ export class HackatonDetailComponent implements OnInit, OnDestroy {
             .subscribe(hackatonDetail => {
                 this.hackatonDetail = hackatonDetail;
             });
+       var  lugar_detail : Lugar = new Lugar;
+
+       lugar_detail.identificador = this.hackaton_id;
+
+        this.hackatonDetail.lugar = lugar_detail;
     }
 
     /**

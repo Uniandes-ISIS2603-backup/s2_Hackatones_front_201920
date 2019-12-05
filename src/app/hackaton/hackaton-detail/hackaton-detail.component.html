@@ -9,6 +9,7 @@
 							<div class="thumb">
 								<img class="img-fluid" src="{{hackatonDetail.imagen}}"/>
 						  </div>
+						  <a class="figure-caption"  [routerLink] ="['/lugares', { outlets: { 'detail': [hackatonDetail.lugar.identificador] } }]" ><font color="white">Ver lugar de la hackaton</font></a>			
 						</div>
 					</div>
 					
@@ -37,7 +38,8 @@
 						</dl>
 					</div>
 				</div>
+				
 			</div>
-        </div>
+		</div>	
 	</div>
 </div>

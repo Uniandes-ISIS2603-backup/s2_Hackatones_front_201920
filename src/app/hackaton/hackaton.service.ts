@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 
 import {Hackaton} from './hackaton';
 import {HackatonDetail} from './hackaton-detail';
+import { LugarDetail } from '../lugar/lugar-detail';
 
 
 const API_URL = '../../assets/';
@@ -25,6 +26,10 @@ export class HackatonService {
 
     createHackaton(hackaton): Observable<HackatonDetail> {
         return this.http.post<HackatonDetail>(API_URL + hackatones, hackaton);
+    }
+
+    getLugar(hackatonId) : Observable<LugarDetail> {
+        return this.http.get<LugarDetail>(API_URL + "hackatones/" +hackatonId + "/lugar/" +  hackatonId);
     }
 
     /**

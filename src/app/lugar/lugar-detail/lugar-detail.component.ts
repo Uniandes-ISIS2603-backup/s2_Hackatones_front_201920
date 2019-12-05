@@ -5,6 +5,11 @@ import { LugarService } from '../lugar.service';
 import { Lugar } from '../lugar';
 import { LugarDetail } from '../lugar-detail';
 
+import {Hackaton} from '../../hackaton/hackaton';
+import { HackatonService } from '../../hackaton/hackaton.service';
+
+
+
 @Component({
   selector: 'app-lugar-detail',
   templateUrl: './lugar-detail.component.html'
@@ -19,6 +24,7 @@ export class LugarDetailComponent implements OnInit {
   */
   constructor(
     private lugarService: LugarService,
+    private hackatonesService : HackatonService,
     private route: ActivatedRoute
   ) { }
 
@@ -26,6 +32,10 @@ export class LugarDetailComponent implements OnInit {
   * The editorial whose details we want to show
   */
   lugarDetail: LugarDetail = new LugarDetail();
+
+  hackaton : Hackaton = new Hackaton(); 
+
+
 
 
 

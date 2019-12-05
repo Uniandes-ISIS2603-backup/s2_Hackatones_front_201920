@@ -1,5 +1,6 @@
 import { Patrocinador } from '../patrocinadores/patrocinador';
 import { Hackaton } from './hackaton';
+import { Lugar } from '../lugar/lugar';
 //import { Calificacion } from './calificacion';
 
 /**
@@ -16,4 +17,8 @@ export class HackatonDetail extends Hackaton {
      * Relacion uno o muchos patrocinadores
      */
     patrocinadores:Patrocinador[];
+    /**
+     * lugar de la hackaton
+     */
+    lugar : Lugar;
 }
