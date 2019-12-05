@@ -25,7 +25,7 @@ export class LenguajeDetailComponent implements OnInit {
   /**
   * The editorial whose details we want to show
   */
-  lenguajeDetail: LenguajeDetail;
+  lenguajeDetail: LenguajeDetail = new LenguajeDetail;
 
 
 

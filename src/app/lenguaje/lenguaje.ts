@@ -9,4 +9,8 @@ export class Lenguaje
     * The lenguaje's name
     */
     name: string;
+    /**
+    * The lenguaje's imagen
+    */
+    imagen : String;
 }
