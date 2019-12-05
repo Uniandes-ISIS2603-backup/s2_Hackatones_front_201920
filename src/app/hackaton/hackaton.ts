@@ -3,7 +3,7 @@ import { Lugar } from "../lugar/lugar";
 export class Hackaton {
     id:number;
     
-    limite_participantes:number;
+    limiteparticipantes:number;
 
     nombre:string;
 
@@ -23,8 +23,8 @@ export class Hackaton {
 
     premio:string;
 
-    finalizada:boolean;
+    finalizada:number;
 
-    tamanoEquipo:number;
+    tamanoEquipos:number;
 
 }

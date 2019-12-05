@@ -66,24 +66,20 @@ export class HackatonDetailComponent implements OnInit, OnDestroy {
     * we want to show
     */
     getHackatonDetail(): void {
-        this.hackatonService.getHackatonDetail(this.hackaton_id)
+        this.hackatonService.getHackatonesDetail(this.hackaton_id)
             .subscribe(hackatonDetail => {
                 this.hackatonDetail = hackatonDetail;
             });
        var  lugar_detail : Lugar = new Lugar;
        lugar_detail.identificador = this.hackaton_id;
         this.hackatonDetail.lugar = lugar_detail;
-
-        var interes_detail : Interes = new Interes;
-        interes_detail.id = this.hackaton_id;
-        this.hackatonDetail.interes = interes_detail;
     }
 
     /**
     * This method retrieves all the hackatons in the Hackatonstore to show them in the list
     */
     getOtherHackatons(): void {
-        this.hackatonService.getHackaton()
+        this.hackatonService.getHackatones()
             .subscribe(hackatons => {
                 this.other_hackatons = hackatons;
                 this.other_hackatons = this.other_hackatons.filter(hackaton => hackaton.id !== this.hackaton_id);

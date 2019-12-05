@@ -28,7 +28,7 @@ export class HackatonListComponent implements OnInit {
    * Asks the service to update the list of hackatones
    */
   getHackatons(): void {
-    this.hackatonService.getHackaton().subscribe(hackatons => this.hackatones = hackatons);
+    this.hackatonService.getHackatones().subscribe(hackatons => this.hackatones = hackatons);
   }
 
   
