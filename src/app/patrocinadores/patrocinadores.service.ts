@@ -1,14 +1,20 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Patrocinador } from './patrocinador';
 import { Observable } from 'rxjs';
 import { PatrocinadorDetail } from './patrocinador-detail';
+import {environment} from '../../environments/environment';
 
-const API_URL = "../../assets/";
-const patrocinadores = 'patrocinadores.json';
+
+const API_URL = environment.apiURL;
+const patrocinadores = '/patrocinadores';
 
 @Injectable()
 export class PatrocinadoresService {
+
+  httpOptions = {
+    headers: new HttpHeaders({ "Content-Type": "application/json" })
+  };
 
   /**
     * Constructor of the service
@@ -26,6 +32,6 @@ export class PatrocinadoresService {
 
     /** POST: añade un nuevo patrocinador al servidor */
   createPatrocinador(patrocinador: Patrocinador): Observable<Patrocinador> {
-    return this.http.post<Patrocinador>(API_URL + patrocinadores, patrocinador);
+    return this.http.post<Patrocinador>(API_URL + patrocinadores+ '/', patrocinador);
   }
 }
