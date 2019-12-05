@@ -17,7 +17,7 @@ export class HackatonDetail extends Hackaton {
     /**
      * Relacion uno o muchos patrocinadores
      */
-    patrocinadores:Patrocinador[];
+    //patrocinadores:Patrocinador[];
     /**
      * lugar de la hackaton
      */
@@ -25,5 +25,5 @@ export class HackatonDetail extends Hackaton {
     /**
      * interes de la hackaton
      */
-    interes : Interes;
+    //interes : Interes;
 }
