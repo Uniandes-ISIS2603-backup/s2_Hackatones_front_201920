@@ -4,7 +4,21 @@
         <p class="p-3 text-white">Descripción: {{patrocinadorDetail.descripcion}}</p>
         <p class="p-3 text-white">Ubicación: {{patrocinadorDetail.ubicacion}}</p>
         <p class="p-3 text-white">Información Adicional:{{patrocinadorDetail.infoAdicional}}</p>
-
+        <table class="table table-striped table-dark">
+            <thead class="thead-light">
+              <tr>
+                <th>Patrocinador Name</th>
+              </tr>
+            </thead>
+            <tbody>
+                      <tr *ngFor = "let e of patrocinadorDetail.hackatones">
+                          <td style="cursor: pointer;">
+                              <a class="figure-caption" [routerLink] ="['/hackaton', { outlets: { 'detail': [e.id] } }]" >{{e.nombre}}</a>
+                          </td>
+                        
+                      </tr>
+            </tbody>
+          </table>
     </div>
 </div>
 <div class="col-4">
