@@ -7,6 +7,7 @@ import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
 import { PatrocinadorDetailComponent } from '../patrocinadores/patrocinador-detail/patrocinador-detail.component';
 import { PatrocinadoresListComponent } from '../patrocinadores/patrocinadores-list/patrocinadores-list.component';
+import { PatrocinadoresCreateComponent } from '../patrocinadores/patrocinadores-create/patrocinadores-create.component';
 
 import { LenguajeDetailComponent } from '../lenguaje/lenguaje-detail/lenguaje-detail.component';
 import { LenguajeListComponent } from '../lenguaje/lenguaje-list/lenguaje-list.component';
@@ -113,7 +114,11 @@ const routes: Routes = [
                path: ':id',
                 component: PatrocinadorDetailComponent,
                 outlet: 'detail'
-               }
+               },
+               {
+                path: 'add',
+                component: PatrocinadoresCreateComponent
+            }
            ]
        },
      {
