@@ -3,7 +3,7 @@ export class Interes {
   /**
     * El identificadoor del interes
     */
-   id: number;
+   id: any;
 
    /**
    * El nombre del interes

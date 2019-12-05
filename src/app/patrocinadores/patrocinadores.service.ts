@@ -25,7 +25,7 @@ export class PatrocinadoresService {
     }
 
     /** POST: añade un nuevo patrocinador al servidor */
-  createLugar(patrocinador: Patrocinador): Observable<Patrocinador> {
+  createPatrocinador(patrocinador: Patrocinador): Observable<Patrocinador> {
     return this.http.post<Patrocinador>(API_URL + patrocinadores, patrocinador);
   }
 }

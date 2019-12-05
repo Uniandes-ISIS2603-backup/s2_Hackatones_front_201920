@@ -1,46 +1,47 @@
-<form [formGroup]="patrocinadoresForm" (ngSubmit)="createPatrocinadores(patrocinadoresForm.value)">
-
-    <div class="form-group mx-sm-3 mb-2">
-     <label for="nombre" class="text-white">
-       Nombre
-     </label>
-     <input novalidate
-       id="nombre"
-       class="form-control"
-       formControlName="nombre"
-       placeholder="Nombre del patrocinador">
-    </div>
- 
-    <div class="form-group  mx-sm-3 mb-2">
-     <label for="descripcion" class="text-white">
-       Descripcion
-     </label>
-    <input id="descripcion" type="text"
-      class="form-control"
-      formControlName="descripcion"
-      placeholder="Descripcion del patrocinador">
-   </div>
-   <div class="form-group  mx-sm-3 mb-2">
-     <label for="ubicacion" class="text-white">
-       Ubicacion
-     </label>
-    <input id="ubicacion" type="text"
-      class="form-control"
-      formControlName="ubicacion"
-      placeholder="Ubicacion del patrocinador">
-   </div>
-   <div class="form-group  mx-sm-3 mb-2">
-     <label for="infoAdicional" class="text-white">
-       Información Adicional
-     </label>
-    <input id="infoAdicional" type="text"
-      class="form-control"
-      formControlName="infoAdicional"
-      placeholder="Información Adicional del patrocinador">
-   </div>
-   
- 
-   <button class="button mx-sm-3 mb-2" type="submit"   
-           [disabled]="patrocinadoresForm.invalid">Create</button>
- 
- </form>
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6">
+      <br>
+      <h2 class="text-center"><font color="white">Crear un patrocinador</font></h2>
+      <br>
+      <form name="patrocinador" (ngSubmit)="f.form.valid && createpatrocinador()" #f="ngForm" novalidate>
+          <div class="form-group">
+              <label for="nombre"><b><font color="white">Nombre</font></b></label>
+              <input type="text" name="nombre" class="form-control" id="nombre" [(ngModel)]="patrocinador.nombre"
+                  #nombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nombre.invalid }" required>
+              <div class="invalid-feedback">
+                  <div>Hace falta el campo del nombre</div>
+              </div>
+          </div>
+          <div class="form-group">
+                  <label for="descripcion"><b><font color="white">Descripcion</font></b></label>
+                  <input type="text" name="descripcion" class="form-control" id="descripcion" [(ngModel)]="patrocinador.descripcion"
+                      #Descripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && descripcion.invalid }" required>
+                  <div class="invalid-feedback">
+                      <div>Hace falta el campo de la Descripcion</div>
+                  </div>
+              </div>
+              <div class="form-group">
+                      <label for="ubicacion"><b><font color="white">Ubicacion</font></b></label>
+                      <input type="text" name="ubicacion" class="form-control" id="ubicacion" [(ngModel)]="patrocinador.ubicacion"
+                          #ubicacion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ubicacion.invalid }" required>
+                      <div class="invalid-feedback">
+                          <div>Hace falta el campo de la ubicacion</div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                          <label for="informacionAdicional"><b><font color="white">Informacion Adicional</font></b></label>
+                          <input type="text" name="informacionAdicional" class="form-control" id="informacionadicional" [(ngModel)]="patrocinador.informacionAdicional"
+                              #informacionadicional="ngModel" [ngClass]="{ 'is-invalid': f.submitted && informacionAdicional.invalid }" required>
+                          <div class="invalid-feedback">
+                              <div>Hace falta el campo del Informacion Adicional</div>
+                          </div>
+                      </div>
+          <div class="row form-inline justify-content-center align-self-center">
+              <button type="submit" class="btn btn-primary">Create</button>
+              <div class="divider"></div>
+              <button type="button" [routerLink]="['/home']"  class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+          </div>
+      </form>
+  </div>
+</div>

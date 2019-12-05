@@ -6,11 +6,16 @@ import { PatrocinadorDetailComponent } from './patrocinador-detail/patrocinador-
 import { PatrocinadoresCreateComponent } from './patrocinadores-create/patrocinadores-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing/app-routing.module';
+import {FormsModule} from '@angular/forms';
+import {NgxPermissionsModule} from 'ngx-permissions';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
   imports: [
-    CommonModule, ReactiveFormsModule, AppRoutingModule
+    CommonModule, ReactiveFormsModule, AppRoutingModule, NgxPermissionsModule,
+    FormsModule,
+    NgbModule
   ],
   declarations: [PatrocinadoresListComponent, PatrocinadorDetailComponent, PatrocinadoresCreateComponent],
   exports: [PatrocinadoresListComponent, PatrocinadorDetailComponent, PatrocinadoresCreateComponent],
