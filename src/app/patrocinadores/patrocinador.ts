@@ -7,5 +7,5 @@ export class Patrocinador {
       /**
       * El nombre del patrocinador
       */
-      name: string; 
+      nombre: string; 
   }

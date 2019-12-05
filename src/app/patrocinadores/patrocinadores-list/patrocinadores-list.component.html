@@ -9,7 +9,7 @@
       <tbody>
                 <tr *ngFor = "let e of patrocinadores">
                     <td style="cursor: pointer;">
-						<a class="figure-caption" [routerLink] ="['/patrocinadores', { outlets: { 'detail': [e.id] } }]" >{{e.name}}</a>
+						<a class="figure-caption" [routerLink] ="['/patrocinadores', { outlets: { 'detail': [e.id] } }]" >{{e.nombre}}</a>
 					</td>
                   
                 </tr>
