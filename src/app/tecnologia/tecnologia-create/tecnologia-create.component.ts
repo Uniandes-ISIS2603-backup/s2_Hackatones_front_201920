@@ -41,7 +41,7 @@ export class TecnologiaCreateComponent implements OnInit {
                 this.toastrService.success("La tecnología fue creada", "Creación de Tecnología");
         return this.tecnologia;
     }
- 
+
     cancelCreation(): void {
         this.cancel.emit();
     }
