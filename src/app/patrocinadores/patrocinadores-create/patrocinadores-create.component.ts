@@ -18,8 +18,12 @@ export class PatrocinadoresCreateComponent implements OnInit {
     */
    constructor(
     private patrocinadoresService: PatrocinadoresService,
-    private toastrService: ToastrService
-) {}
+    private toastrService: ToastrService,
+    private formBuilder: FormBuilder
+) {this.patrocinadorForm = this.formBuilder.group({
+    name: ["", [Validators.required, Validators.minLength(2)]],
+    id: ["", Validators.required]
+  });}
 
 patrocinador: Patrocinador;
 
