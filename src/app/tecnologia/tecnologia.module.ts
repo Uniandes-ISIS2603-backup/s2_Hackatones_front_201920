@@ -10,6 +10,7 @@ import { TecnologiaListComponent } from './tecnologia-list/tecnologia-list.compo
 import {TecnologiaDetailComponent} from './tecnologia-detail/tecnologia-detail.component';
 import {TecnologiaCreateComponent} from './tecnologia-create/tecnologia-create.component';
 import { TecnologiaService } from './tecnologia.service';
+import { TecnologiaEditComponent } from './tecnologia-edit/tecnologia-edit.component';
 
 @NgModule ({
     imports: [
@@ -25,7 +26,8 @@ import { TecnologiaService } from './tecnologia.service';
     declarations: [
         TecnologiaListComponent,
         TecnologiaDetailComponent,
-        TecnologiaCreateComponent 
+        TecnologiaCreateComponent,
+        TecnologiaEditComponent 
     ],
     providers: [TecnologiaService]
 })

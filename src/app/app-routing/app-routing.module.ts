@@ -29,6 +29,7 @@ import {EquipoCreateComponent} from '../equipo/equipo-create/equipo-create.compo
 import { TecnologiaDetailComponent } from '../tecnologia/tecnologia-detail/tecnologia-detail.component';
 import { TecnologiaListComponent } from '../tecnologia/tecnologia-list/tecnologia-list.component';
 import { TecnologiaCreateComponent } from '../tecnologia/tecnologia-create/tecnologia-create.component';
+import { TecnologiaEditComponent } from '../tecnologia/tecnologia-edit/tecnologia-edit.component';
 
 
 const routes: Routes = [
@@ -139,6 +140,10 @@ const routes: Routes = [
             {
                 path:'add',
                 component: TecnologiaCreateComponent
+            },
+            {
+                path: ':id/edit',
+                component: TecnologiaEditComponent
             }
         ]
     },
