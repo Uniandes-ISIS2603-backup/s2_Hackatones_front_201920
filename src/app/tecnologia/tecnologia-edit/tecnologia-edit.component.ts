@@ -18,7 +18,7 @@ export class TecnologiaEditComponent implements OnInit, OnChanges {
         private route: ActivatedRoute
     ) {}
 
-    @Input() tecnologia: TecnologiaDetail;
+    tecnologia: TecnologiaDetail;
 
     tecnologia_id: number;
 
@@ -44,7 +44,7 @@ export class TecnologiaEditComponent implements OnInit, OnChanges {
     }
 
     ngOnChanges(): void {
-       this.ngOnInit;
+       this.ngOnInit();
     }
     ngOnInit(): void {
         this.tecnologia_id = +this.route.snapshot.paramMap.get('id');
