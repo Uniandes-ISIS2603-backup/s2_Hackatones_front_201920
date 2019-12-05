@@ -12,7 +12,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 export class TecnologiaCreateComponent implements OnInit {
 
     /**
-     * Crea 
+     * Crea un
      * @param tecnologiaService 
      * @param toastrService 
      */
