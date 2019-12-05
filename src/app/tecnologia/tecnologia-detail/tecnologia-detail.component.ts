@@ -30,23 +30,13 @@ export class TecnologiaDetailComponent implements OnInit, OnDestroy {
      * Toma el detalle de la tecnologia a mostrar
      */
     getTecnologiaDetail(): void {
-        this.tecnologiaService.getTecnologiaDetail(this.tecnologia_id).subscribe(lugar => {
-            this.tecnologiaDetail = lugar
-        });
-    }
-
-    /**
-     * Retorna todas las tecnologias en la hackaton para mostrarlas en la lista
-     */
-    getOtherTecnologias(): void {
         this.tecnologiaService.getTecnologiaDetail(this.tecnologia_id).subscribe(tecnologia => {
             this.tecnologiaDetail = tecnologia
         });
     }
 
     onLoad(params) {
-        this.tecnologia_id = parseInt(params('id'));
-        console.log(" en detail " + this.tecnologia_id);
+        this.tecnologia_id = parseInt(params['id']);
         this.tecnologiaDetail = new TecnologiaDetail();
         this.getTecnologiaDetail();
     }

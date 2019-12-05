@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Observable, from} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 import {Tecnologia} from './tecnologia';
 import {TecnologiaDetail} from './tecnologia-detail';
@@ -8,10 +8,14 @@ import {TecnologiaDetail} from './tecnologia-detail';
 import {environment} from '../../environments/environment';
 
 const API_URL = environment.apiURL;
-const tecnologias = '/tecnologia';
+const tecnologias = '/tecnologias';
 
 @Injectable()
 export class TecnologiaService {
+
+    httpOptions = {
+        headers: new HttpHeaders({ "Content-Type": "application/json" })
+    };
 
     /**
      * Constructor del servicio

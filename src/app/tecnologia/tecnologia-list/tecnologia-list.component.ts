@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Route} from '@angular/router';
+import {Router} from '@angular/router';
 
 import {Tecnologia} from '../../tecnologia/tecnologia';
 import {TecnologiaService} from '../../tecnologia/tecnologia.service';
@@ -10,15 +10,16 @@ import {TecnologiaService} from '../../tecnologia/tecnologia.service';
     styleUrls: ['./tecnologia-list.component.css']
 })
 export class TecnologiaListComponent implements OnInit {
-    /**
-     *  La lista de tecnologias a mostrar
-     */
-    tecnologias: Tecnologia[];
 
     /**
      * El constructor del componente
      */
-    constructor(private tecnologiaService: TecnologiaService, private router: Route) { this.tecnologias = []; }
+    constructor(private tecnologiaService: TecnologiaService, private router: Router) { this.tecnologias = []; }
+
+    /**
+     *  La lista de tecnologias a mostrar
+     */
+    tecnologias: Tecnologia[];
 
     /**
      * Toma todas las tecnologias de los participantes para mostrar en la lista

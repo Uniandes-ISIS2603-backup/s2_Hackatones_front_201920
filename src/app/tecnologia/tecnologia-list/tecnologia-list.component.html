@@ -9,11 +9,11 @@
             <td style="cursor: pointer;">
                 <a class="figure-caption" [routerLink]="['/tecnologias', { outlets: { 'detail': [i.id] } }]">
                     <div class="card" style="width: 18rem;">
-                        <img src={{i.imagen}} class="card-img-top" alt="...">
+                        <img src="{{i.imagen}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">{{i.nombre}}</p>
+                          <h5 class="card-title">{{i.nombre}}</h5>
                         </div>
-                    </div>
+                      </div>
                 </a>
             </td>
         </div>
@@ -24,23 +24,5 @@
         <a [routerLink]="['/tecnologias/add']" id = "but1" class="button fancy-button"><i class="material-icons">Inscribir una tecnología</i></a>
         <div class="divider"></div>
         <div class="divider"></div>
-        <a [routerLink]="['/tecnologias/delete']" id = "but3" class="button fancy-button"><i class="material-icons">Eliminar una tecnología</i></a>
-        <div class="divider"></div>
-        <div class="divider"></div>
     </div>
-        <div class="col">
-            <div class="divider"></div>
-            <div class="divider"></div>
-            <div class="divider"></div>
-           <tr *ngFor="let e of tecnologias">
-           <div class="card" style="width: 18rem;">
-               <img src={{e.imagen}} class="card-img-top" alt="...">
-              <div class="card-body">
-                <td style="cursor: pointer;">
-                    <a class="figure-caption" [routerLink] ="['/tecnologias', { outlets: { 'detail': [e.identificador] } }]" >{{e.nombre}}</a>
-                </td>
-              </div>
-           </div>
-          </tr>
-        </div>
-    </div>
+</div>
