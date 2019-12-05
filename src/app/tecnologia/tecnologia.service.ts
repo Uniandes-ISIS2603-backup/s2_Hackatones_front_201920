@@ -54,7 +54,6 @@ export class TecnologiaService {
         return this.http.put<TecnologiaDetail>(API_URL + tecnologias+ '/' + tecnologia.id, tecnologia);
     }
 
-
     /**
      * Borra una tecnologia
      * @param tecnologiaId El id de la tecnologia
@@ -63,4 +62,6 @@ export class TecnologiaService {
     deleteTecnologia(tecnologiaId): Observable<TecnologiaDetail> { 
         return this.http.delete<TecnologiaDetail>(API_URL + tecnologias + '/' +tecnologiaId);
     }
+
+    
 }

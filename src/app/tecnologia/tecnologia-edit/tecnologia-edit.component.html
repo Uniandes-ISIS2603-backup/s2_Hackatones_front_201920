@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-12">
+        <br>
+        <h2 class="text-center"><font color ="white">Edit Tecnología</font></h2>
+        <br>
+        <form name="tecnologia" (ngSubmit)="f.form.valid && editTecnologia()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="tecnologiaNombre"><b><font color="white">Nombre</font></b></label>
+                <input type="text" name="tecnologiaNombre" class="form-control" id="tecnologiaNombre" [(ngModel)]="tecnologia.nombre"
+                       #tecnologiaNombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tecnologiaNombre.invalid }" required>
+                       <div class="invalid-feedback">
+                    <div>The tecnologia's name is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tecnologiaDescripcion"><b><font color="white">Descripción</font></b></label>
+                <textarea name="tecnologiaDescripcion" class="form-control" id="tecnologiaDescripcion" [(ngModel)]="tecnologia.descripcion"
+                          #tecnologiaDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tecnologiaDescripcion.invalid }"
+                          required></textarea>
+                <div class="invalid-feedback">
+                    <div>The tecnologia's descripcion is missing</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tecnologiaImage"><b><font color="white">Imagen</font></b></label>
+                <input type="text" name="tecnologiaImagen" class="form-control" id="tecnologiaImagen" [(ngModel)]="tecnologia.imagen"
+                       #tecnologiaImagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tecnologiaImagen.invalid }" required>
+                       <div class="invalid-feedback">
+                    <div>The tecnologia's imagen is missing</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="row form-inline justify-content-center align-self-center">
+            <i  style="padding-right: 1em;"class="fa fa-save " (click)="editTecnologia()"></i>
+          
+            <i class="fa fa-ban" (click)="cancelEdition()"></i>
+        </div>
+    </div>
+</div>
+<br>
+<br>
