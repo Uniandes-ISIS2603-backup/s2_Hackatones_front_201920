@@ -32,18 +32,18 @@ export class TecnologiaCreateComponent implements OnInit {
    /**
     * Crea una nueva tecnologia
     */
-   createTecnologia(): Tecnologia {
+    createTecnologia(): Tecnologia {
         this.tecnologia.id = 88;
         this.tecnologiaService.createTecnologia(this.tecnologia).subscribe(tecnologia => {
         this.tecnologias.push(tecnologia);
         });
                 this.create.emit();
-                this.toastrService.success("The lugar was created", "Lugar creation");
+                this.toastrService.success("La tecnología fue creada", "Creación de Tecnología");
         return this.tecnologia;
-   }
-
-   cancelCreation(): void {
-    this.cancel.emit();
+    }
+ 
+    cancelCreation(): void {
+        this.cancel.emit();
     }
 
    /**
