@@ -1,21 +1,46 @@
-<div class = "container-fluid">
-    <div class="col-md-2">
-        <table class="table table-striped">
-            <thead class = "thead-dark">
-                <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor = "let t of tecnologias">
-                    <td>{{t.id}}</td>
-                    <td style="cursor: pointer;"><a class="figure-catpion" [routerLink] = "['/tecnologias', {outlets : { 'detail': [t.id] } }]">{{t.nombre}}</a></td>
-                </tr>
-            </tbody>
-        </table>
-        <div class = 'col'>
-            <a [routerLink]="['/tecnologias']" class = "button fancy-button"><i class = "material-icons">Crear una nueva tecnología</i>Checkout</a>
+<div class="container-fluid">
+    <div class="col">
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <div class="divider"></div>
+    </div> 
+    <div class="container-fluid">
+        <div class="col-md-2" *ngFor="let i of tecnologias">
+            <td style="cursor: pointer;">
+                <a class="figure-caption" [routerLink]="['/tecnologias', { outlets: { 'detail': [i.id] } }]">
+                    <div class="card" style="width: 18rem;">
+                        <img src={{i.imagen}} class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">{{i.nombre}}</p>
+                        </div>
+                    </div>
+                </a>
+            </td>
+        </div>
+    </div> 
+    <div class="divider"></div>
+    <div class="divider"></div>
+    <div class="col-4">
+        <a [routerLink]="['/tecnologias/add']" id = "but1" class="button fancy-button"><i class="material-icons">Inscribir una tecnología</i></a>
+        <div class="divider"></div>
+        <div class="divider"></div>
+        <a [routerLink]="['/tecnologias/delete']" id = "but3" class="button fancy-button"><i class="material-icons">Eliminar una tecnología</i></a>
+        <div class="divider"></div>
+        <div class="divider"></div>
+    </div>
+        <div class="col">
+            <div class="divider"></div>
+            <div class="divider"></div>
+            <div class="divider"></div>
+           <tr *ngFor="let e of tecnologias">
+           <div class="card" style="width: 18rem;">
+               <img src={{e.imagen}} class="card-img-top" alt="...">
+              <div class="card-body">
+                <td style="cursor: pointer;">
+                    <a class="figure-caption" [routerLink] ="['/tecnologias', { outlets: { 'detail': [e.identificador] } }]" >{{e.nombre}}</a>
+                </td>
+              </div>
+           </div>
+          </tr>
         </div>
     </div>
-</div>

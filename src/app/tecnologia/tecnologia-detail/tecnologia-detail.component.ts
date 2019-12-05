@@ -18,25 +18,11 @@ export class TecnologiaDetailComponent implements OnInit, OnDestroy {
     constructor(
         private tecnologiaService: TecnologiaService,
         private route: ActivatedRoute,
-        private modalDialogService: ModalDialogService,
-        private router: Router,
-        private viewRef: ViewContainerRef,
-        private toastrService: ToastrService
-    ) {
-        this.navigationSubscription = this.router.events.subscribe((e: any) => {
-            if (e instanceof NavigationEnd) {
-                this.ngOnInit();
-            }
-        });
-    }
+    ) {}
+
+    tecnologiaDetail: TecnologiaDetail = new TecnologiaDetail();
 
     @Input() tecnologia_id: number;
-
-    tecnologiaDetail: TecnologiaDetail;
-
-    other_tecnologias: Tecnologia[];
-
-    navigationSubscription;
 
     loader: any;
 
@@ -44,21 +30,18 @@ export class TecnologiaDetailComponent implements OnInit, OnDestroy {
      * Toma el detalle de la tecnologia a mostrar
      */
     getTecnologiaDetail(): void {
-        this.tecnologiaService.getTecnologiaDetail(this.tecnologia_id)
-            .subscribe(tecnologiaDetail => {
-                this.tecnologiaDetail = tecnologiaDetail
-            });
+        this.tecnologiaService.getTecnologiaDetail(this.tecnologia_id).subscribe(lugar => {
+            this.tecnologiaDetail = lugar
+        });
     }
 
     /**
      * Retorna todas las tecnologias en la hackaton para mostrarlas en la lista
      */
     getOtherTecnologias(): void {
-        this.tecnologiaService.getTecnologias()
-            .subscribe(tecnologias => {
-                this.other_tecnologias = tecnologias;
-                this.other_tecnologias = this.other_tecnologias.filter(tecnologia => tecnologia.id !== this.tecnologia_id);
-            })
+        this.tecnologiaService.getTecnologiaDetail(this.tecnologia_id).subscribe(tecnologia => {
+            this.tecnologiaDetail = tecnologia
+        });
     }
 
     onLoad(params) {
@@ -79,9 +62,7 @@ export class TecnologiaDetailComponent implements OnInit, OnDestroy {
      * Refresca la vista cuando se necesita cargar otra tecnologia
      */
     ngOnDestroy() {
-        if (this.navigationSubscription) {
-            this.navigationSubscription.unsubscribe();
-        }
+        this.loader.unsubscribe();
     }
 
 }

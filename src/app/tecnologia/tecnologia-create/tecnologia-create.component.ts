@@ -1,54 +1,50 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {DatePipe} from '@angular/common';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {ToastrService} from 'ngx-toastr';
 import { TecnologiaService } from '../tecnologia.service';
-
 import {Tecnologia} from '../tecnologia';
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
-@Component ({
+@Component({
     selector: 'app-tecnologia-create',
     templateUrl: './tecnologia-create.component.html',
-    providers: [DatePipe]
+    styleUrls: ['./tecnologia-create.component.css']
 })
 export class TecnologiaCreateComponent implements OnInit {
 
     constructor(
-        private dp: DatePipe,
         private tecnologiaService: TecnologiaService,
-        private toastrService: ToastrService,
-        private router: Router
+        private toastrService: ToastrService
     ) {}
 
     tecnologia: Tecnologia;
+    tecnologiaForm: FormGroup;
+    tecnologias: Tecnologia[] = new Array();
 
-    /**
-    * Cancels the creation of the new book
-    * Redirects to the books' list page
-    */
-   cancelCreation(): void {
-    this.toastrService.warning('The tecnologia wasn\'t created', 'Tecnologia creation');
-    this.router.navigate(['/tecnologias/list']);
-   }
+    @Output() cancel = new EventEmitter();
+
+    @Output() create = new EventEmitter();
 
    /**
     * Crea una nueva tecnologia
     */
    createTecnologia(): Tecnologia {
-       let name: String = new String(this.tecnologia.name);
-       this.tecnologiaService.createTecnologia(this.tecnologia).subscribe(tecnologia => {
-           this.tecnologia.id = tecnologia.id;
-           this.router.navigate['/tecnologias/' + tecnologia.id];
-       }, err =>  {
-           this.toastrService.error(err, 'Error');
-       })
-       return this.tecnologia;
+        this.tecnologia.id = 88;
+        this.tecnologiaService.createTecnologia(this.tecnologia).subscribe(tecnologia => {
+        this.tecnologias.push(tecnologia);
+        });
+                this.create.emit();
+                this.toastrService.success("The lugar was created", "Lugar creation");
+        return this.tecnologia;
    }
+
+   cancelCreation(): void {
+    this.cancel.emit();
+    }
 
    /**
     * Inicializa el componente
     */
-   ngOnInit() {
+   ngOnInit(): void {
        this.tecnologia = new Tecnologia();
    }
 }
