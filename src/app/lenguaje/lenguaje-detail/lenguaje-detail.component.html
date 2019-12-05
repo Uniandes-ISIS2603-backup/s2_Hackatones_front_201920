@@ -7,3 +7,9 @@
             <br>
     </div>
 </div>
+<hr>
+                        <h2 > <font color="white">Hackatones</font></h2>                      
+                        <div *ngFor = "let hackatons of lenguajeDetail.hackatones">
+                            <dd class="caption" routerLink="/hackaton/{{hackatons.id}}">{{hackatons.name}}</dd>
+                        </div>
+                        <hr>
