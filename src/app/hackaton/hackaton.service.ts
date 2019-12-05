@@ -5,6 +5,8 @@ import {HttpClient} from '@angular/common/http';
 import {Hackaton} from './hackaton';
 import {HackatonDetail} from './hackaton-detail';
 import { LugarDetail } from '../lugar/lugar-detail';
+import { Equipo } from '../equipo/equipo';
+import { EquipoDetail } from '../equipo/equipo-detail';
 
 
 const API_URL = '../../assets/';
@@ -32,8 +34,12 @@ export class HackatonService {
         return this.http.get<LugarDetail>(API_URL + "hackatones/" +hackatonId + "/lugar/" +  hackatonId);
     }
 
+    getEquipos(hackatonId): Observable<EquipoDetail> {
+        return this.http.get<EquipoDetail>(API_URL + "hackatones/" + hackatonId + "/equipo")
+    }
+
     /**
-    * Constructor of the service
+    * Constructor of the service--
     * @param http The HttpClient - This is necessary in order to perform requests
     */
     constructor(private http: HttpClient) {}
