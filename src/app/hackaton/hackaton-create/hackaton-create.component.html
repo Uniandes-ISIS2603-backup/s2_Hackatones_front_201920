@@ -22,9 +22,9 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="limite-participantes"><b><font color="white">Limite de participantes</font></b></label>
-                <input type="number" name="limite-participantes" class="form-control" id="limite-participantes" [(ngModel)]="hackaton.limite-participantes"
-                    #limiteparticipantes="ngModel" [ngClass]="{ 'is-invalid': f.submitted && limite-participantes.invalid }" required>
+                <label for="limiteParticipantes"><b><font color="white">Limite de participantes</font></b></label>
+                <input type="number" name="limiteParticipantes" class="form-control" id="limite-participantes" [(ngModel)]="hackaton.limiteParticipantes"
+                    #limiteparticipantes="ngModel" [ngClass]="{ 'is-invalid': f.submitted && limiteParticipantes.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Hace falta el campo del limite-participantes</div>
                 </div>
@@ -51,6 +51,22 @@
                     #especificacion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && especificacion.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Hace falta el campo del especificacion</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="reglas"><b><font color="white">Reglas</font></b></label>
+                <input type="text" name="reglas" class="form-control" id="reglas" [(ngModel)]="hackaton.reglas"
+                    #reglas="ngModel" [ngClass]="{ 'is-invalid': f.submitted && reglas.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo de las reglas</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="restricciones"><b><font color="white">Restricciones</font></b></label>
+                <input type="text" name="restricciones" class="form-control" id="restricciones" [(ngModel)]="hackaton.restricciones"
+                    #restricciones="ngModel" [ngClass]="{ 'is-invalid': f.submitted && restricciones.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo de las restricciones</div>
                 </div>
             </div>
             <div class="form-group">
@@ -102,8 +118,16 @@
                 </div>
             </div>
             <div class="form-group">
+                <label for="iniciada"><b><font color="white">Iniciada</font></b></label>
+                <input type="boolean" name="iniciada" class="form-control" id="iniciada" [(ngModel)]="hackaton.iniciada"
+                    #iniciada="ngModel" [ngClass]="{ 'is-invalid': f.submitted && iniciada.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el campo del iniciada</div>
+                </div>
+            </div>
+            <div class="form-group">
                 <label for="tamanoEquipo"><b><font color="white">Tamaño de los equipos</font></b></label>
-                <input type="number" name="tamanoEquipo" class="form-control" id="tamanoEquipo" [(ngModel)]="hackaton.tamanoEquipo"
+                <input type="number" name="tamanoEquipo" class="form-control" id="tamanoEquipo" [(ngModel)]="hackaton.tamanoEquipos"
                     #tamanoEquipo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tamanoEquipo.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Hace falta el campo del tamanoEquipo</div>

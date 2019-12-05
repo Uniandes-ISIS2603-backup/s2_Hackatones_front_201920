@@ -2,7 +2,6 @@ import { Patrocinador } from '../patrocinadores/patrocinador';
 import { Hackaton } from './hackaton';
 import { Lugar } from '../lugar/lugar';
 import { Interes } from '../intereses/interes';
-//import { Calificacion } from './calificacion';
 
 /**
 * This class represents a book of the BookStore. 
